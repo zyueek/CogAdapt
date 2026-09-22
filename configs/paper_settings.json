@@ -1,0 +1,90 @@
+{
+  "training_seed": 90317,
+  "epochs": 2,
+  "microbatch": 1,
+  "gradient_accumulation": 8,
+  "max_sequence_length": 2048,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "lora_learning_rate": 7e-05,
+  "router_learning_rate": 1.5e-05,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.03,
+  "max_grad_norm": 1.0,
+  "hard_active_blocks": 10,
+  "widths": [
+    4,
+    6,
+    10
+  ],
+  "thresholds": [
+    -0.5,
+    0.5
+  ],
+  "generation": {
+    "decoding": "greedy",
+    "lcb_max_new_tokens": 512,
+    "bcb_max_new_tokens": 768,
+    "primary_pass": 1,
+    "batch_size_limit": 8
+  },
+  "paper_random_mask_seeds": {
+    "qwen_lcb": [
+      90317,
+      90318,
+      90319
+    ],
+    "qwen_bcb": [
+      90317,
+      90318,
+      90319
+    ],
+    "glm_lcb": [
+      90317,
+      90318,
+      90319
+    ],
+    "glm_bcb": [
+      90320,
+      90321,
+      90322
+    ]
+  },
+  "models": {
+    "qwen": {
+      "name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+      "lora_targets": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ],
+      "train_router_gates": true,
+      "load_in_4bit": true
+    },
+    "glm": {
+      "name": "zai-org/GLM-4.7-Flash",
+      "revision": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+      "lora_targets": [
+        "q_a_proj",
+        "q_b_proj",
+        "kv_a_proj_with_mqa",
+        "kv_b_proj",
+        "o_proj"
+      ],
+      "train_router_gates": true,
+      "load_in_4bit": true
+    }
+  },
+  "historical_training_runtime": {
+    "bitsandbytes": "0.49.2",
+    "numpy": "2.2.6",
+    "peft": "0.18.1",
+    "scipy": "1.17.1",
+    "torch": "2.10.0",
+    "transformers": "5.4.0"
+  },
+  "release_scope": "Selected implementation excerpts and paper-result cohort, not an end-to-end package"
+}

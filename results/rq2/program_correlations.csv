@@ -1,0 +1,6 @@
+model,x,y,block,n_programs,spearman_rho,note
+Qwen,qwen_hidden_cosine_distance_b41,median_reading_time_s,41.0,32,0.7371700879765396,Figure 6; block selected exploratorily by maximum absolute theta correlation
+Human,median_reading_time_s,global_theta_mean_z,,32,0.6055718475073314,Figure 6
+Qwen,qwen_hidden_cosine_distance_b41,global_theta_mean_z,41.0,32,0.5824780058651026,"Figure 6; exploratory block selection, not an independently confirmed optimum"
+Qwen,qwen_router_difficulty_score_oof,global_theta_mean_z,39.0,32,0.7166422287390029,"Introduction; saved out-of-fold reading-time predictor, not downstream mask score"
+GLM,glm_router_difficulty_score_oof,global_theta_mean_z,31.0,32,0.5113636363636364,"Introduction; saved out-of-fold reading-time predictor, not downstream mask score"

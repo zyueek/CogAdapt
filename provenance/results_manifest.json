@@ -1,0 +1,180 @@
+{
+  "artifact": "CogAdapt",
+  "paper_title": "CogAdapt: Cognitive-Informed Sparse Adaptation of LLM Models for Code Generation",
+  "paper_source_filename": "FSE_27_EEG_MOE (13).pdf",
+  "paper_sha256": "25328c8b1234ec135dd78f1b36925a24ddf2a4f0c733d41aec7e4390cb3b7da0",
+  "scope": "Explicit paper-review subset; not a complete experiment archive",
+  "sources": [
+    {
+      "source_path": "NeuroCodeAlign/outputs/v8_fif/rq1_region_alignment/RQ1_REGION_LEVEL_VALUES.csv",
+      "sha256": "e72ccba4a52b662f14084aad5da83c047d64508f430cee90816cffaae5f06c1c"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v11_glm47/v8_analysis/V11_V8_QWEN_VS_GLM47.csv",
+      "sha256": "cb9b4350cbc70868331824944f56f7467f929bcacafe2ce923dab24ad7051e72"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v8_fif/rq1_rq2_additional_audit_20260904/token_correlations_all24_cluster_ci.csv",
+      "sha256": "abdd146c2bb76eba4418172e2517e3f9432b951700ae5342f66d0d2e0d981df3"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v8_fif/rq1_rq2_additional_audit_20260904/glm_token_correlations_all18_cluster_ci.csv",
+      "sha256": "b52d452d07922c52ce7dbaa702be520057c7defe7f58bf3b2b498056f07ae24a"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v8_fif/interpretable_theta_triangles/INTERPRETABLE_TRIANGLE_PROGRAM_VALUES.csv",
+      "sha256": "bd1a7201396694e9cff21414c50ccdbdb1cf3a4bed97cebd08a4a1697cd187fa"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v11_glm47/v8_analysis/glm_program_table.csv",
+      "sha256": "90052832a8a59c820244fb20eb8f712e462d7cf952cfcb1af58b0f7b5994845d"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/v8_fif/theta_length_controlled_alignment/V8_QWEN_GLM_THETA_LENGTH_CONTROLLED_ALIGNMENT_CELLS.csv",
+      "sha256": "0bf1b3135d725ffc5925841462259ae014144d535fba3f9db54ffedc6e3599c1"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/dynamic_k6_cost/report/results.json",
+      "sha256": "0a605da55bc316fc77803e814673e829f08a044f61502ac7e18deeee37c38920"
+    },
+    {
+      "source_path": "NeuroCodeAlign/outputs/glm_random_k6_lower_tail/report/results.json",
+      "sha256": "41a79a56a25e36cbb4dd89f63b0902c886fadec28c13242f3a596238f15f11ab"
+    },
+    {
+      "source_path": "NeuroCodeAlign/data/v10_neuro_adaptive/lcb_training_sensitivity_config5.jsonl",
+      "sha256": "3394b6143b3ace61992a40654d49417089792dd944aefd4412baba76b6f7cf8c"
+    },
+    {
+      "source_path": "NeuroCodeAlign/data/v11_glm47/lcb_training_sensitivity.jsonl",
+      "sha256": "1c4f39ca749f4991e44dd4c3644163075d8020f9197eb77a8f051d0e9d3136fe"
+    },
+    {
+      "source_path": "NeuroCodeAlign/configs/v10_neuro_adaptive/lcb_config6.yaml",
+      "sha256": "9451735f7ae5439c2c66cbc34b7c84b643201d85fb1eb07395aa42249c01fa55"
+    },
+    {
+      "source_path": "NeuroCodeAlign/configs/v11_glm47/lcb_v11.yaml",
+      "sha256": "283058874af984329c174fdb823763f553c8a3370a1752f40bf3b5d3bfd0622d"
+    }
+  ],
+  "exports": [
+    {
+      "path": "results/rq1/region_values.csv",
+      "rows": 245,
+      "sources": [
+        "outputs/v8_fif/rq1_region_alignment/RQ1_REGION_LEVEL_VALUES.csv"
+      ],
+      "transformation": "All 245 eligible regions; numeric aggregate columns only; source code, program names, token mappings and event/participant records excluded.",
+      "sha256": "6bf68b8a1e43c2d7faee7ff5e85d6315bd53744227679522e41c431dbd08c4cf"
+    },
+    {
+      "path": "results/rq1/table1_alignment.csv",
+      "rows": 20,
+      "sources": [
+        "outputs/v8_fif/rq1_region_alignment/RQ1_REGION_LEVEL_VALUES.csv",
+        "outputs/v11_glm47/v8_analysis/V11_V8_QWEN_VS_GLM47.csv",
+        "outputs/v8_fif/rq1_rq2_additional_audit_20260904/token_correlations_all24_cluster_ci.csv",
+        "outputs/v8_fif/rq1_rq2_additional_audit_20260904/glm_token_correlations_all18_cluster_ci.csv"
+      ],
+      "transformation": "Only Table 1 contrasts; retain available pointwise cluster CIs; event z differences explicitly distinguished from correlations.",
+      "sha256": "90bc641745c104827b3605521d5525d517f63af9bff6cb8f1f33cc8bd5299ecf"
+    },
+    {
+      "path": "results/rq2/program_values.csv",
+      "rows": 32,
+      "sources": [
+        "outputs/v8_fif/interpretable_theta_triangles/INTERPRETABLE_TRIANGLE_PROGRAM_VALUES.csv",
+        "outputs/v11_glm47/v8_analysis/glm_program_table.csv"
+      ],
+      "transformation": "32 program-level aggregates; original names replaced by stable condition-index IDs.",
+      "sha256": "d22d65120a63b17c937fa4390fb3f53d79c7106f4d8f36f4ceb694f869796e61"
+    },
+    {
+      "path": "results/rq2/program_correlations.csv",
+      "rows": 5,
+      "sources": [
+        "outputs/v8_fif/interpretable_theta_triangles/INTERPRETABLE_TRIANGLE_PROGRAM_VALUES.csv",
+        "outputs/v11_glm47/v8_analysis/glm_program_table.csv"
+      ],
+      "transformation": "Spearman correlations recomputed from the exported aggregate values only.",
+      "sha256": "a1977534c5b558a91150c2d3d4dc6f3dc1eff81eac737db77fdf541692cbe4f6"
+    },
+    {
+      "path": "results/rq2/theta_depth_time_cells.csv",
+      "rows": 5700,
+      "sources": [
+        "outputs/v8_fif/theta_length_controlled_alignment/V8_QWEN_GLM_THETA_LENGTH_CONTROLLED_ALIGNMENT_CELLS.csv"
+      ],
+      "transformation": "Complete Figure 5 cells retained, including inverse and not-applicable cells.",
+      "sha256": "121fdd759c87760902d781052e2dcc10ae8242ec7747c971a33bff8084016745"
+    },
+    {
+      "path": "results/rq3/paper_runs.csv",
+      "rows": 24,
+      "sources": [
+        "outputs/dynamic_k6_cost/report/results.json",
+        "outputs/glm_random_k6_lower_tail/report/results.json"
+      ],
+      "transformation": "Explicit paper cohort only: 3 random masks per model/benchmark; all other runs excluded.",
+      "sha256": "205cb9fe37e56a13dd1f5df58689ff27e97fc9859d2f88f6fd5ee79912bbf337"
+    },
+    {
+      "path": "results/rq3/task_outcomes.csv",
+      "rows": 4740,
+      "sources": [
+        "outputs/dynamic_k6_cost/report/results.json",
+        "outputs/glm_random_k6_lower_tail/report/results.json"
+      ],
+      "transformation": "Binary pass/fail only for the paper cohort; task names pseudonymized, no prompts, generated solutions, hidden tests, execution metadata or other runs.",
+      "sha256": "078e1ff52df75fed9156ae6b2ab7a7afe45dd8833c5182c0d4fdc5b8194c19c1"
+    },
+    {
+      "path": "results/rq3/table2_accuracy.csv",
+      "rows": 16,
+      "sources": [
+        "outputs/dynamic_k6_cost/report/results.json",
+        "outputs/glm_random_k6_lower_tail/report/results.json"
+      ],
+      "transformation": "Means across exactly the declared paper masks; sample SD uses ddof=1, not standard error.",
+      "sha256": "000ddc54e483f7d26b40f65638f13d10e75db49bd2c6a43ae70308e037659a21"
+    },
+    {
+      "path": "results/rq3/table3_training_efficiency.csv",
+      "rows": 4,
+      "sources": [
+        "outputs/dynamic_k6_cost/report/results.json"
+      ],
+      "transformation": "Paper's training-side metrics; per-unique-example eligibility and instrumented replicas.",
+      "sha256": "5e0a09524d416950ad5a1986c1e32455a88271bebf4e97a4f2d2f1248856375e"
+    },
+    {
+      "path": "results/rq3/paired_dynamic_vs_regular.csv",
+      "rows": 4,
+      "sources": [
+        "outputs/dynamic_k6_cost/report/results.json"
+      ],
+      "transformation": "Four saved paired contrasts; original BH family retained, not recalculated on this subset.",
+      "sha256": "68eda3ff95aca538b052e1285906605dce6f224e147159c67e99c48dccd2810a"
+    },
+    {
+      "path": "results/rq3/selection_examples.json",
+      "sources": [
+        "data/v10_neuro_adaptive/lcb_training_sensitivity_config5.jsonl",
+        "data/v11_glm47/lcb_training_sensitivity.jsonl"
+      ],
+      "transformation": "Six actual cached masks: lexicographically first LCB training example at each width; task names, prompts, reference code and source-token traces withheld; null means unavailable.",
+      "sha256": "89aaf129d29377539681f0cfec81fe63bc0fd8ff2d1e6d5b6444324d9900a4e7"
+    },
+    {
+      "path": "configs/paper_settings.json",
+      "sources": [
+        "configs/v10_neuro_adaptive/lcb_config6.yaml",
+        "configs/v11_glm47/lcb_v11.yaml"
+      ],
+      "transformation": "Portable settings subset; all machine-specific paths and launch configuration removed.",
+      "sha256": "c6e629e050e7550992a927cb53f4b821834d48975e218e04657a9831a7f3099c"
+    }
+  ],
+  "privacy": "No participant-level records, raw recordings, source-code stimuli, benchmark prompts/solutions/tests, checkpoints, credentials, user paths or unrelated experiment outputs."
+}

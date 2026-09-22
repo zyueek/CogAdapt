@@ -1,0 +1,206 @@
+{
+  "scope": "Selected functions only; not the complete experiment implementation",
+  "glm_anchor_source": "NeuroCodeAlign/src/v11_glm47/__init__.py",
+  "main_hard_width": 10,
+  "new_review_additions": [
+    {
+      "release_file": "cogadapt/weighting.py",
+      "symbols": ["task_weights", "completion_weights"],
+      "kind": "standalone translations with input validation",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/train.py",
+      "source_logic": "V10TrainingDataset.__init__ and __getitem__; same weighting in GLM V11",
+      "not_a_full_training_runner": true
+    },
+    {
+      "release_file": "cogadapt/alignment.py",
+      "symbols": ["rank_correlation", "length_controlled_spearman"],
+      "kind": "review wrappers around Spearman and the verbatim residualization routine"
+    },
+    {
+      "release_files": ["scripts/verify_artifact.py", "scripts/plot_review_figures.py", "tests/test_review_core.py"],
+      "kind": "new lightweight review tooling; no model experiments"
+    }
+  ],
+  "excerpts": [
+    {
+      "release_file": "cogadapt/selection_qwen.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/sensitivity.py",
+      "source_file_sha256": "8664a1bcfc3595cc8aebfcda588b91f45338c890618409d87c16740e284a6a05",
+      "symbol": "METRIC_WEIGHTS",
+      "source_start_line": 20,
+      "source_end_line": 26,
+      "excerpt_sha256": "ef4f5d0d141e852a544a79d1e10d7d669f903df96ab02f4a1fb6a59c6fdf67bb",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_qwen.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/sensitivity.py",
+      "source_file_sha256": "8664a1bcfc3595cc8aebfcda588b91f45338c890618409d87c16740e284a6a05",
+      "symbol": "_standardize",
+      "source_start_line": 72,
+      "source_end_line": 74,
+      "excerpt_sha256": "c2012bf480792adf4bdbc88d26e2f12536610c24b4de13607523e60ae3626d5a",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_qwen.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/sensitivity.py",
+      "source_file_sha256": "8664a1bcfc3595cc8aebfcda588b91f45338c890618409d87c16740e284a6a05",
+      "symbol": "combine_metrics",
+      "source_start_line": 77,
+      "source_end_line": 90,
+      "excerpt_sha256": "5530566b8bde9e4b863a1be5c0f1f35842a23436031c03fac6c2fd5d2dd413ce",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_qwen.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/sensitivity.py",
+      "source_file_sha256": "8664a1bcfc3595cc8aebfcda588b91f45338c890618409d87c16740e284a6a05",
+      "symbol": "active_block_count",
+      "source_start_line": 93,
+      "source_end_line": 98,
+      "excerpt_sha256": "c50aca2132a823f060f8cee0cd916ae8767f267123a637883e9fb5cbe4f582b3",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_qwen.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/sensitivity.py",
+      "source_file_sha256": "8664a1bcfc3595cc8aebfcda588b91f45338c890618409d87c16740e284a6a05",
+      "symbol": "select_active_blocks",
+      "source_start_line": 101,
+      "source_end_line": 108,
+      "excerpt_sha256": "e9c04cd93e86b61449ab4c3e2d4feec6194c6feb7872e541b552d4072072e215",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_glm.py",
+      "source_path": "NeuroCodeAlign/src/v11_glm47/common.py",
+      "source_file_sha256": "55828658c45ce1e2d7588a090d51c9d96858880aeb19700df887d5cb78562894",
+      "symbol": "METRIC_WEIGHTS",
+      "source_start_line": 19,
+      "source_end_line": 25,
+      "excerpt_sha256": "ef4f5d0d141e852a544a79d1e10d7d669f903df96ab02f4a1fb6a59c6fdf67bb",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_glm.py",
+      "source_path": "NeuroCodeAlign/src/v11_glm47/common.py",
+      "source_file_sha256": "55828658c45ce1e2d7588a090d51c9d96858880aeb19700df887d5cb78562894",
+      "symbol": "_standardize",
+      "source_start_line": 79,
+      "source_end_line": 86,
+      "excerpt_sha256": "0b22a5c3336149941cc91f91d4f59cfa8132084e8196a24ed18ef0f8480c8c50",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_glm.py",
+      "source_path": "NeuroCodeAlign/src/v11_glm47/common.py",
+      "source_file_sha256": "55828658c45ce1e2d7588a090d51c9d96858880aeb19700df887d5cb78562894",
+      "symbol": "combine_metrics",
+      "source_start_line": 89,
+      "source_end_line": 102,
+      "excerpt_sha256": "93babdece896385128a9e6ff16ae17629765eabe80ebd487ae49bffde0af1a23",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_glm.py",
+      "source_path": "NeuroCodeAlign/src/v11_glm47/common.py",
+      "source_file_sha256": "55828658c45ce1e2d7588a090d51c9d96858880aeb19700df887d5cb78562894",
+      "symbol": "active_block_count",
+      "source_start_line": 105,
+      "source_end_line": 110,
+      "excerpt_sha256": "1692a935b99fa9aafa31bb11d36c9df4a55fa0e677ee2099b45fa33c98706ef2",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/selection_glm.py",
+      "source_path": "NeuroCodeAlign/src/v11_glm47/common.py",
+      "source_file_sha256": "55828658c45ce1e2d7588a090d51c9d96858880aeb19700df887d5cb78562894",
+      "symbol": "select_active_blocks",
+      "source_start_line": 113,
+      "source_end_line": 120,
+      "excerpt_sha256": "4051041ef8fb766d795136a459adfc4ed9b4dc080177755057609eee0b570649",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/weighting.py",
+      "source_path": "NeuroCodeAlign/src/v9_neurorouter/prepare_data.py",
+      "source_file_sha256": "4dc0b765f239efc9dc68aaf4f5f0f28e64958436b553ea2b24d7574f1150bd72",
+      "symbol": "token_category",
+      "source_start_line": 119,
+      "source_end_line": 140,
+      "excerpt_sha256": "43435c69debecd2a6c892f1de8c7951814c2da775466aa1224236afb91d042c8",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/weighting.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/train.py",
+      "source_file_sha256": "d08e5fbeea38939e78ad6f7a6302cc1260a2497deb2829f64ea05cb457c7eb6a",
+      "symbol": "_hotspot_lines",
+      "source_start_line": 41,
+      "source_end_line": 59,
+      "excerpt_sha256": "938862eb623ef565d5ad164bc31b23e14c88d8a9bd838e440baa606848c91239",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/weighting.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/train.py",
+      "source_file_sha256": "d08e5fbeea38939e78ad6f7a6302cc1260a2497deb2829f64ea05cb457c7eb6a",
+      "symbol": "_hotspot_token_flags",
+      "source_start_line": 62,
+      "source_end_line": 71,
+      "excerpt_sha256": "c6e044cd9033ad5e38a458de2aff3d2cffbc0db6840899859a14a38620c84919",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/torch_helpers.py",
+      "source_path": "NeuroCodeAlign/src/v9_neurorouter/train.py",
+      "source_file_sha256": "8e28488578f0203eae238384387452953441e7a64790e32a6d0c1ba8b9a2121c",
+      "symbol": "weighted_causal_loss",
+      "source_start_line": 168,
+      "source_end_line": 185,
+      "excerpt_sha256": "f35493297de14cfd92321b118741554c4579d655f313e42493143c632c954481",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/torch_helpers.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/train.py",
+      "source_file_sha256": "d08e5fbeea38939e78ad6f7a6302cc1260a2497deb2829f64ea05cb457c7eb6a",
+      "symbol": "_mask_trainable",
+      "source_start_line": 271,
+      "source_end_line": 277,
+      "excerpt_sha256": "f3ba0eec77764a3e94232d95f13e7acfdbdbe153b0e012b8aa17420fb8d9cb5c",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/torch_helpers.py",
+      "source_path": "NeuroCodeAlign/src/v10_neuro_adaptive/generate.py",
+      "source_file_sha256": "1eb2057c203fb82f8a4793ad8af7f91cea58a7f8ffab473368f5147ff6bfadc2",
+      "symbol": "_activate_blocks",
+      "source_start_line": 99,
+      "source_end_line": 117,
+      "excerpt_sha256": "9ef002aa1908ae1f6638245b0eff30f4e6b4665412b0c6b1d889224970a43b34",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/torch_helpers.py",
+      "source_path": "CKA/scripts/cka_select_layers.py",
+      "source_file_sha256": "d6a50c735eb1d5b7c8ff3abb8ca06f7ae49e12bf850357f440826e64b9336acc",
+      "symbol": "linear_cka",
+      "source_start_line": 62,
+      "source_end_line": 77,
+      "excerpt_sha256": "0bbe2234a0c95fdf1d0359d1dadf3096db247940058bd95e71bf48c73303a46e",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    },
+    {
+      "release_file": "cogadapt/alignment.py",
+      "source_path": "NeuroCodeAlign/src/v8_fif/plot_theta_length_controlled_alignment.py",
+      "source_file_sha256": "90664136ab5a4f929a0e5e5f44d425e7980530807640670ef713cc0d2f34fe9e",
+      "symbol": "residualize",
+      "source_start_line": 36,
+      "source_end_line": 43,
+      "excerpt_sha256": "4d6be76b45721ae080003f45236915c3f935f8975b0cb1b502a4a17ed7f7284f",
+      "transformation": "verbatim symbol; minimal standalone imports"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+human_signal,model_signal,model,statistic,value,ci_low,ci_high,unit,n_observations,n_programs,block_scope
+Token dwell,Hidden-state shift,Qwen,Spearman rho,0.1613181600873156,0.1122051029301272,0.2095791444772681,token aggregates; program-cluster bootstrap CI,2597.0,32,31-39 pooled
+Token dwell,Hidden-state shift,GLM,Spearman rho,0.0858673274858511,0.0428020882178463,0.126571240595582,token aggregates; program-cluster bootstrap CI,2597.0,32,31
+Token dwell,MoE write,Qwen,Spearman rho,0.1342460580355582,0.0792216359344579,0.1891724260620577,token aggregates; program-cluster bootstrap CI,2597.0,32,31-39 pooled
+Token dwell,MoE write,GLM,Spearman rho,0.2338784157343589,0.1648916977496754,0.2915525613641826,token aggregates; program-cluster bootstrap CI,2597.0,32,31
+Token regression,Hidden-state shift,Qwen,Spearman rho,0.1451043257953108,0.0993652295345469,0.1934634872432747,token aggregates; program-cluster bootstrap CI,2597.0,32,31-39 pooled
+Token regression,Hidden-state shift,GLM,Spearman rho,0.1252077837928463,0.0796039090572292,0.1717055547867611,token aggregates; program-cluster bootstrap CI,2597.0,32,31
+Token regression,MoE write,Qwen,Spearman rho,0.167186136377429,0.1204764746411651,0.2139133562709197,token aggregates; program-cluster bootstrap CI,2597.0,32,31-39 pooled
+Token regression,MoE write,GLM,Spearman rho,0.290776472611043,0.2434979530170224,0.329521796650855,token aggregates; program-cluster bootstrap CI,2597.0,32,31
+Regression landing,Expert-choice confidence,Qwen,Mean landing-minus-prior standardized difference,0.1648710525,,,z difference; NOT a correlation,,32,31-39 pooled
+Regression landing,Expert-choice confidence,GLM,Mean landing-minus-prior standardized difference,0.3073138566460452,,,z difference; NOT a correlation,,32,31
+Regression landing,Hidden-state shift,Qwen,Mean landing-minus-prior standardized difference,0.4398911546,,,z difference; NOT a correlation,,32,31-39 pooled
+Regression landing,Hidden-state shift,GLM,Mean landing-minus-prior standardized difference,0.1635290454821734,,,z difference; NOT a correlation,,32,31
+Regression landing,MoE write,Qwen,Mean landing-minus-prior standardized difference,0.1102241711,,,z difference; NOT a correlation,,32,31-39 pooled
+Regression landing,MoE write,GLM,Mean landing-minus-prior standardized difference,0.0618298510012816,,,z difference; NOT a correlation,,32,31
+Region attention,Expert-choice confidence,Qwen,Spearman rho,0.5106961297113809,,,semantic-region aggregates,245.0,32,31-39 pooled
+Region attention,Expert-choice confidence,GLM,Spearman rho,0.5005556960889114,,,semantic-region aggregates,245.0,32,30-38 pooled
+Region attention,MoE write,Qwen,Spearman rho,0.4883719981395198,,,semantic-region aggregates,245.0,32,31-39 pooled
+Region attention,MoE write,GLM,Spearman rho,0.40651739304278295,,,semantic-region aggregates,245.0,32,30-38 pooled
+Region attention,Integration,Qwen,Spearman rho,0.3843034214885475,,,semantic-region aggregates,245.0,32,31-39 pooled
+Region attention,Integration,GLM,Spearman rho,0.4224408195905312,,,semantic-region aggregates,245.0,32,30-38 pooled

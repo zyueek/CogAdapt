@@ -1,0 +1,4 @@
+# Lightweight review tools; no transformers, PEFT, datasets, or model downloads.
+numpy>=2.2,<3
+scipy>=1.15,<2
+matplotlib>=3.10,<4

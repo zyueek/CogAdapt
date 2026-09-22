@@ -1,0 +1,26 @@
+{
+  "scope": "CPU-only validation of the selective review artifact; not a new LLM experiment",
+  "unit_tests_passed": 14,
+  "unit_tests_skipped_in_preparation_environment": 0,
+  "hashed_exports_verified": 12,
+  "verbatim_source_excerpts_verified": 18,
+  "paper_runs_verified": 24,
+  "binary_task_outcomes_verified": 4740,
+  "region_rows_verified": 245,
+  "program_rows_verified": 32,
+  "depth_time_cells_verified": 5700,
+  "real_cached_masks_reproduced": 6,
+  "review_figures_rendered": 4,
+  "review_figure_formats": ["png", "pdf"],
+  "new_model_training_runs": 0,
+  "new_model_generations": 0,
+  "new_benchmark_executions": 0,
+  "preparation_environment_packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.15.3",
+    "matplotlib": "3.11.1",
+    "torch": "2.7.0+cu126"
+  },
+  "historical_model_experiment_runtime": "Recorded separately in configs/paper_settings.json",
+  "rendered_figures_are_generated_outputs": "Not committed; regenerate with scripts/plot_review_figures.py"
+}
