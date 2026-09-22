@@ -158,18 +158,3 @@ PyTorch-specific tests are explicitly skipped. The historical model-experiment
 software versions are recorded separately in the settings file; these lightweight
 review dependencies are not a claim to reproduce that GPU environment.
 
-## Release boundaries and data
-
-Included human measurements are group-level aggregates without participant IDs
-or individual recordings. Program and benchmark-task names are replaced with
-stable review IDs. No raw stimuli source code, private filesystem paths,
-credentials, model checkpoints, benchmark hidden tests, or generated solutions
-are included. The paper PDF and schematic illustrations are not redistributed.
-
-The original NoviceVsExpert human corpus and model/benchmark datasets remain
-subject to their respective distribution terms. This artifact does not grant
-rights to those excluded assets.
-
-See [the paper-to-artifact map](docs/PAPER_ARTIFACT_MAP.md) for what can and cannot
-be checked with this subset. The retained source code is covered by the existing
-[MIT license](LICENSE), including its original copyright notice.
