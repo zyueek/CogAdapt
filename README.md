@@ -57,13 +57,6 @@ blocks and GLM has 47; each routed block contains multiple experts. Selected
 blocks contain attention LoRA adapters and trainable router gate weights.
 Pretrained expert feed-forward weights remain frozen.
 
-The main configuration uses widths **4, 6, and 10**, not a fixed K6 mask.
-Qwen's retained helper has a historical default hard width of 8: callers must
-pass **hard_blocks=10**, as the paper configuration and included examples do.
-Qwen uses an EEG-teacher proxy to choose training width; GLM uses frozen-model
-difficulty. Both use human-informed loss weights. At inference both use model
-features from the prompt.
-
 During training, masks restrict parameter-gradient eligibility; all installed
 adaptations still participate in the forward pass. An optimizer step can update
 the union of masks across its eight accumulated microsteps. At inference,
