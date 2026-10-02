@@ -26,7 +26,7 @@
 !/results/rq3/*.csv
 !/results/rq3/*.json
 
-# Never distribute recordings, checkpoints, environments, or generated figures.
+# Never distribute recordings, checkpoints, or environments.
 **/__pycache__/
 **/.env*
 **/*.fif
@@ -36,6 +36,11 @@
 **/*.pth
 **/*.npz
 **/*.parquet
-/figures/
 /.venv/
 /.pytest_cache/
+
+# Publish only the selected RQ1 figure; other renderings remain ignored.
+!/figures/
+!/figures/region_retention/
+!/figures/region_retention/figure4_retained_four_categories.png
+!/figures/region_retention/figure4_retained_four_categories.pdf

@@ -23,8 +23,7 @@ workspace history.
 | Weighted causal loss, gradient eligibility, inference activation | [Selected PyTorch routines](cogadapt/torch_helpers.py) |
 | Spearman alignment and length controls | [Alignment routines](cogadapt/alignment.py) |
 | CKA baseline formula | [linear_cka](cogadapt/torch_helpers.py) |
-| RQ1, Table 1 | [Local alignment summary](results/rq1/table1_alignment.csv) |
-| RQ1, Figure 4 | [All 245 eligible semantic-region aggregates](results/rq1/region_values.csv) |
+| RQ1, Figure 4 | [Retained four-category figure](figures/region_retention/figure4_retained_four_categories.png), [full numerical data](results/rq1), [calculation and reproduction](docs/RQ1_REGION_ALIGNMENT.md) |
 | RQ2, Figure 5 | [Complete depth–time correlation maps](results/rq2/theta_depth_time_cells.csv) |
 | RQ2, Figure 6 | [32 program aggregates](results/rq2/program_values.csv), [correlations](results/rq2/program_correlations.csv) |
 | RQ3, Table 2 | [Accuracy table](results/rq3/table2_accuracy.csv), [individual paper runs](results/rq3/paper_runs.csv) |
@@ -133,11 +132,45 @@ recalculates aggregate correlations, reproduces the six cached block masks, and
 validates exported-file and source-excerpt hashes. It does not train or evaluate
 an LLM. Tests use tiny synthetic arrays/tensors solely as unit-test fixtures.
 
-The plotting script creates PNG and PDF renderings under the ignored figures/
-directory: a Table 2 accuracy summary, the Figure 4 region heatmap, the Figure 5
-depth–time maps, and the Figure 6 program scatter triplet. These are new renderings
-of the saved numerical values, not replacements for the manuscript's original
-layout. Figure 6's trend lines are descriptive fits, not confidence intervals.
+The plotting script draws the Table 2 accuracy summary, Figure 4 percentage
+bars, Figure 5 depth–time maps, and Figure 6 program scatter triplet. The selected
+Figure 4 PNG/PDF is included in the repository; other renderings are generated
+locally. Figure 6's trend lines are descriptive fits, not confidence intervals.
+
+## RQ1: attention and EEG alignment within code regions
+
+![Figure 4: retained code-region alignment](figures/region_retention/figure4_retained_four_categories.png)
+
+[PDF](figures/region_retention/figure4_retained_four_categories.pdf) ·
+[Full numerical data](results/rq1) ·
+[Signal definitions, selection, and reproduction](docs/RQ1_REGION_ALIGNMENT.md)
+
+The four panels compare **Attention–Qwen**, **Attention–GLM**, **EEG theta-band
+power–Qwen**, and **EEG theta-band power–GLM**. Each bar shows the percentage of
+retained code regions in a correlation band. The four categories contain 28,
+24, 12, and 17 regions, respectively, for 81 distinct regions.
+
+Each coefficient is Spearman correlation across matched tokens within a source
+line. The model signal is the equal-weight mean of standardized hidden-state
+shift, MoE write, and residual integration. Theta uses 4–8 Hz power change over
+0–1 s after a regression landing fixation.
+
+The export includes all 245 original regions, all 1,817 matched token inputs,
+the selected 81 regions and their 733 token inputs, exact bar counts, and
+exclusion reasons. This replaces the previous RQ1 aggregate table and heatmap.
+The selected regions and category assignments were optimized to make every bar
+at least 75% positive; this is an exploratory, outcome-selected display, not an
+independent significance result. The full pool remains available for inspection.
+
+Verify every coefficient and redraw this figure without the original workspace:
+
+~~~bash
+python scripts/reproduce_four_category_figure.py
+python scripts/plot_review_figures.py --figure 4
+~~~
+
+The verifier checks 732 coefficients across 183 estimable regions and all 80 bar
+segments. Redrawing preserves the published region set and category assignments.
 
 For the optional PyTorch loss/masking/CKA excerpts and CPU unit tests:
 

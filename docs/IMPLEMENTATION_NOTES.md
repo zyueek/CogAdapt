@@ -97,7 +97,7 @@ is retained in the released code. Neither routine skips transformer blocks.
 | Figure 6 Qwen block 41 | One scalar: adjacent-token hidden cosine distance, not the composite |
 | RQ3 selector hidden_shift | Norm of the same token's block output-minus-input, divided by input norm |
 | RQ3 residual_integration | Cosine between the MLP/MoE write and total block update |
-| RQ1 region Integration | Mean of region-standardized hidden, MoE-write, and residual components |
+| RQ1 region Integration | Mean of hidden, MoE-write, and residual components standardized over all 1,817 matched tokens |
 
 Thus Equation 7's illustrative adjacent-token distance is not the RQ3
 hidden_shift selector definition. The update/input-state norm described around
@@ -107,7 +107,7 @@ is a composite, not one raw activation.
 Qwen RQ1/Figure 5 uses multi-metric composites; GLM uses its native scalar
 features. Their conceptual roles are comparable, but their formulas are not
 identical. Qwen local blocks 31–39 correspond to GLM 30–38 for the region analysis;
-the token/event GLM summaries use block 31.
+the replaced historical token/event summaries used block 31.
 
 The historical Qwen RQ3 confidence hook applies softmax to a tensor that the
 pinned Transformers 5.4.0 router already returned as probabilities. The recorded
@@ -118,12 +118,14 @@ treated as a cross-architecture common numerical scale.
 
 ## Statistical scope
 
-- Table 1 token and region entries are Spearman correlations. Its regression
-  landing entries are mean standardized differences, **not** correlations.
-- Token confidence intervals are saved pointwise program-cluster bootstrap
-  intervals. No interval is invented for a region or event entry.
-- Regions share programs and participants. The 245 rows are not 245 independent
-  people or trials. Their correlations are descriptive.
+- RQ1 uses within-region Spearman correlations across matched tokens. Its
+  81-region figure is selected from 183 estimable regions (245 original regions)
+  using observed signs and code-supported category assignments. The requirement
+  of at least 75% positive per bar is a selection constraint, not significance.
+- Regions share programs and participants. Pooled token inputs allow numerical
+  verification, but do not provide independent participant-level replication.
+- See [RQ1 data and methods](RQ1_REGION_ALIGNMENT.md) for the exact selection,
+  signal definitions, normalization, denominators, and reproduction commands.
 - Figure 5 removes linear code-size effects from original-valued model and theta
   vectors before calculating Spearman correlation on residuals. It does not
   residualize ranks. Every positive, inverse, and unavailable cell is retained.

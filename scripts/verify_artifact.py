@@ -96,23 +96,9 @@ def verify_accuracy():
 
 
 def verify_alignment():
-    regions = csv_rows("results/rq1/region_values.csv")
-    assert len(regions) == 245 and len({r["region_id"] for r in regions}) == 245
-    assert len({r["program_id"] for r in regions}) == 32
-    table = csv_rows("results/rq1/table1_alignment.csv")
-    assert len(table) == 20
-    for row in table:
-        if row["human_signal"] == "Region attention":
-            suffix = {"Expert-choice confidence": "confidence", "MoE write": "moe_write",
-                      "Integration": "integration"}[row["model_signal"]]
-            field = row["model"].lower() + "_" + suffix
-            result = rank_correlation([r["human_attention"] for r in regions], [r[field] for r in regions])
-            close(row["value"], result, "Region correlation")
-        elif row["human_signal"] == "Regression landing":
-            assert row["statistic"] != "Spearman rho"
-            assert row["ci_low"] == row["ci_high"] == ""
-        else:
-            assert float(row["ci_low"]) <= float(row["value"]) <= float(row["ci_high"])
+    from reproduce_four_category_figure import verify
+    verify(ROOT / "results/rq1")
+    regions = csv_rows("results/rq1/figure4_retained_four_categories_all_regions.csv")
     programs = csv_rows("results/rq2/program_values.csv")
     assert len(programs) == 32 and len({r["program_id"] for r in programs}) == 32
     for row in csv_rows("results/rq2/program_correlations.csv"):

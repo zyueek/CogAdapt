@@ -2,7 +2,7 @@
   "scope": "CPU-only validation of the selective review artifact; not a new LLM experiment",
   "unit_tests_passed": 14,
   "unit_tests_skipped_in_preparation_environment": 0,
-  "hashed_exports_verified": 12,
+  "hashed_exports_verified": 22,
   "verbatim_source_excerpts_verified": 18,
   "paper_runs_verified": 24,
   "binary_task_outcomes_verified": 4740,
@@ -11,16 +11,28 @@
   "depth_time_cells_verified": 5700,
   "real_cached_masks_reproduced": 6,
   "review_figures_rendered": 4,
-  "review_figure_formats": ["png", "pdf"],
+  "review_figure_formats": [
+    "png",
+    "pdf"
+  ],
   "new_model_training_runs": 0,
   "new_model_generations": 0,
   "new_benchmark_executions": 0,
   "preparation_environment_packages": {
-    "numpy": "2.3.5",
-    "scipy": "1.15.3",
-    "matplotlib": "3.11.1",
-    "torch": "2.7.0+cu126"
+    "numpy": "1.26.4",
+    "scipy": "1.16.0",
+    "pandas": "2.2.2",
+    "matplotlib": "3.10.8",
+    "torch": "2.7.0"
   },
   "historical_model_experiment_runtime": "Recorded separately in configs/paper_settings.json",
-  "rendered_figures_are_generated_outputs": "Not committed; regenerate with scripts/plot_review_figures.py"
+  "rendered_figures_are_generated_outputs": "Selected RQ1 PNG/PDF committed; all four figures can be rendered with scripts/plot_review_figures.py",
+  "validation_date": "2026-10-02",
+  "rq1_estimable_regions_verified": 183,
+  "rq1_correlations_recomputed": 732,
+  "rq1_displayed_regions_verified": 81,
+  "rq1_all_token_inputs_verified": 1817,
+  "rq1_displayed_token_inputs_verified": 733,
+  "rq1_bar_segments_verified": 80,
+  "rq1_redraw_pixel_identical": true
 }

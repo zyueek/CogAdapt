@@ -1,0 +1,81 @@
+panel,section,band,region_count,denominator_regions,percentage
+gaze_qwen,Control flow,ρ ≤ 0,7,28,25.0
+gaze_qwen,Calls / returns,ρ ≤ 0,6,24,25.0
+gaze_qwen,Array expressions,ρ ≤ 0,2,12,16.666666666666668
+gaze_qwen,Scalar / other,ρ ≤ 0,3,17,17.647058823529413
+gaze_qwen,Control flow,0 < ρ < 0.30,9,28,32.142857142857146
+gaze_qwen,Calls / returns,0 < ρ < 0.30,5,24,20.833333333333332
+gaze_qwen,Array expressions,0 < ρ < 0.30,5,12,41.666666666666664
+gaze_qwen,Scalar / other,0 < ρ < 0.30,5,17,29.41176470588235
+gaze_qwen,Control flow,0.30 ≤ ρ < 0.50,9,28,32.142857142857146
+gaze_qwen,Calls / returns,0.30 ≤ ρ < 0.50,6,24,25.0
+gaze_qwen,Array expressions,0.30 ≤ ρ < 0.50,3,12,25.0
+gaze_qwen,Scalar / other,0.30 ≤ ρ < 0.50,1,17,5.882352941176471
+gaze_qwen,Control flow,0.50 ≤ ρ < 0.70,2,28,7.142857142857143
+gaze_qwen,Calls / returns,0.50 ≤ ρ < 0.70,2,24,8.333333333333334
+gaze_qwen,Array expressions,0.50 ≤ ρ < 0.70,1,12,8.333333333333334
+gaze_qwen,Scalar / other,0.50 ≤ ρ < 0.70,4,17,23.529411764705884
+gaze_qwen,Control flow,0.70 ≤ ρ ≤ 1.00,1,28,3.5714285714285716
+gaze_qwen,Calls / returns,0.70 ≤ ρ ≤ 1.00,5,24,20.833333333333332
+gaze_qwen,Array expressions,0.70 ≤ ρ ≤ 1.00,1,12,8.333333333333334
+gaze_qwen,Scalar / other,0.70 ≤ ρ ≤ 1.00,4,17,23.529411764705884
+gaze_glm,Control flow,ρ ≤ 0,7,28,25.0
+gaze_glm,Calls / returns,ρ ≤ 0,6,24,25.0
+gaze_glm,Array expressions,ρ ≤ 0,3,12,25.0
+gaze_glm,Scalar / other,ρ ≤ 0,4,17,23.529411764705884
+gaze_glm,Control flow,0 < ρ < 0.30,14,28,50.0
+gaze_glm,Calls / returns,0 < ρ < 0.30,11,24,45.833333333333336
+gaze_glm,Array expressions,0 < ρ < 0.30,4,12,33.333333333333336
+gaze_glm,Scalar / other,0 < ρ < 0.30,5,17,29.41176470588235
+gaze_glm,Control flow,0.30 ≤ ρ < 0.50,5,28,17.857142857142858
+gaze_glm,Calls / returns,0.30 ≤ ρ < 0.50,4,24,16.666666666666668
+gaze_glm,Array expressions,0.30 ≤ ρ < 0.50,2,12,16.666666666666668
+gaze_glm,Scalar / other,0.30 ≤ ρ < 0.50,5,17,29.41176470588235
+gaze_glm,Control flow,0.50 ≤ ρ < 0.70,2,28,7.142857142857143
+gaze_glm,Calls / returns,0.50 ≤ ρ < 0.70,3,24,12.5
+gaze_glm,Array expressions,0.50 ≤ ρ < 0.70,2,12,16.666666666666668
+gaze_glm,Scalar / other,0.50 ≤ ρ < 0.70,1,17,5.882352941176471
+gaze_glm,Control flow,0.70 ≤ ρ ≤ 1.00,0,28,0.0
+gaze_glm,Calls / returns,0.70 ≤ ρ ≤ 1.00,0,24,0.0
+gaze_glm,Array expressions,0.70 ≤ ρ ≤ 1.00,1,12,8.333333333333334
+gaze_glm,Scalar / other,0.70 ≤ ρ ≤ 1.00,2,17,11.764705882352942
+theta_qwen,Control flow,ρ ≤ 0,7,28,25.0
+theta_qwen,Calls / returns,ρ ≤ 0,6,24,25.0
+theta_qwen,Array expressions,ρ ≤ 0,3,12,25.0
+theta_qwen,Scalar / other,ρ ≤ 0,4,17,23.529411764705884
+theta_qwen,Control flow,0 < ρ < 0.30,15,28,53.57142857142857
+theta_qwen,Calls / returns,0 < ρ < 0.30,11,24,45.833333333333336
+theta_qwen,Array expressions,0 < ρ < 0.30,8,12,66.66666666666667
+theta_qwen,Scalar / other,0 < ρ < 0.30,5,17,29.41176470588235
+theta_qwen,Control flow,0.30 ≤ ρ < 0.50,3,28,10.714285714285714
+theta_qwen,Calls / returns,0.30 ≤ ρ < 0.50,6,24,25.0
+theta_qwen,Array expressions,0.30 ≤ ρ < 0.50,0,12,0.0
+theta_qwen,Scalar / other,0.30 ≤ ρ < 0.50,2,17,11.764705882352942
+theta_qwen,Control flow,0.50 ≤ ρ < 0.70,2,28,7.142857142857143
+theta_qwen,Calls / returns,0.50 ≤ ρ < 0.70,1,24,4.166666666666667
+theta_qwen,Array expressions,0.50 ≤ ρ < 0.70,1,12,8.333333333333334
+theta_qwen,Scalar / other,0.50 ≤ ρ < 0.70,5,17,29.41176470588235
+theta_qwen,Control flow,0.70 ≤ ρ ≤ 1.00,1,28,3.5714285714285716
+theta_qwen,Calls / returns,0.70 ≤ ρ ≤ 1.00,0,24,0.0
+theta_qwen,Array expressions,0.70 ≤ ρ ≤ 1.00,0,12,0.0
+theta_qwen,Scalar / other,0.70 ≤ ρ ≤ 1.00,1,17,5.882352941176471
+theta_glm,Control flow,ρ ≤ 0,7,28,25.0
+theta_glm,Calls / returns,ρ ≤ 0,6,24,25.0
+theta_glm,Array expressions,ρ ≤ 0,3,12,25.0
+theta_glm,Scalar / other,ρ ≤ 0,4,17,23.529411764705884
+theta_glm,Control flow,0 < ρ < 0.30,11,28,39.285714285714285
+theta_glm,Calls / returns,0 < ρ < 0.30,10,24,41.666666666666664
+theta_glm,Array expressions,0 < ρ < 0.30,5,12,41.666666666666664
+theta_glm,Scalar / other,0 < ρ < 0.30,6,17,35.294117647058826
+theta_glm,Control flow,0.30 ≤ ρ < 0.50,7,28,25.0
+theta_glm,Calls / returns,0.30 ≤ ρ < 0.50,4,24,16.666666666666668
+theta_glm,Array expressions,0.30 ≤ ρ < 0.50,2,12,16.666666666666668
+theta_glm,Scalar / other,0.30 ≤ ρ < 0.50,4,17,23.529411764705884
+theta_glm,Control flow,0.50 ≤ ρ < 0.70,3,28,10.714285714285714
+theta_glm,Calls / returns,0.50 ≤ ρ < 0.70,3,24,12.5
+theta_glm,Array expressions,0.50 ≤ ρ < 0.70,2,12,16.666666666666668
+theta_glm,Scalar / other,0.50 ≤ ρ < 0.70,1,17,5.882352941176471
+theta_glm,Control flow,0.70 ≤ ρ ≤ 1.00,0,28,0.0
+theta_glm,Calls / returns,0.70 ≤ ρ ≤ 1.00,1,24,4.166666666666667
+theta_glm,Array expressions,0.70 ≤ ρ ≤ 1.00,0,12,0.0
+theta_glm,Scalar / other,0.70 ≤ ρ ≤ 1.00,2,17,11.764705882352942

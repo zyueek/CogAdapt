@@ -7,10 +7,7 @@ included or required to inspect this release.
 | Paper location | Included object | Reproducible from this subset |
 |---|---|---|
 | Sections 4.3–4.5 | Selector, weight, loss, and masking excerpts | Cached-mask selection; numerical weight/loss behavior; masking unit tests |
-| Table 1 token entries | Eight saved correlation estimates with available cluster CIs | Check table precision and units; not raw-gaze preprocessing |
-| Table 1 regression-landing entries | Six saved mean standardized differences | Check values and units; not participant-level recomputation |
-| Table 1 region entries | Six correlations plus 245 aggregate region rows | Recompute correlations from all included region rows |
-| Figure 4 | All eligible regions in fixed source ordering, with group-level signals | Redraw nine-column region heatmap |
+| RQ1, Figure 4 | Selected 81-region PNG/PDF, 245-region audit, 1,817 pooled token inputs, memberships and bar counts | Recompute all 732 coefficients and redraw the four-category percentage bars; see [instructions](RQ1_REGION_ALIGNMENT.md) |
 | Figure 5 | All 5,700 model/family/block/bin cells, including 36 unavailable GLM cells | Redraw the full maps; upstream metric/theta extraction is excluded |
 | Figure 6 | 32 pseudonymized program aggregates | Recompute the three rank correlations and redraw scatter panels |
 | Introduction's program difficulty–theta result | Saved Qwen/GLM out-of-fold difficulty aggregates | Recompute 0.717 and 0.511 correlations; not refit the predictors |

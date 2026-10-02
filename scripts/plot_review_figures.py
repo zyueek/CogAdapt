@@ -73,43 +73,10 @@ def accuracy(output):
     save(fig, output, "table2_accuracy")
 
 
-def region_heatmap(output):
-    data = rows("results/rq1/region_values.csv")
-    panels = [
-        ("Human", ["human_attention_heatmap_z", "human_regression", "eeg_theta"],
-         ["Attention", "Backward\nregression", "EEG theta"]),
-        ("Qwen", ["qwen_hidden", "qwen_moe_write", "qwen_integration_heatmap_z"],
-         ["Hidden\nshift", "MoE\nwrite", "Integration"]),
-        ("GLM", ["glm_hidden", "glm_moe_write", "glm_integration_heatmap_z"],
-         ["Hidden\nshift", "MoE\nwrite", "Integration"]),
-    ]
-    matrices = [np.column_stack([array(data, column) for column in columns])
-                for _, columns, _ in panels]
-    limit = max(float(np.nanmax(np.abs(m))) for m in matrices)
-    fig, axes = plt.subplots(1, 3, figsize=(11, 10), sharey=True)
-    groups = list(dict.fromkeys(r["semantic_type"] for r in data))
-    centers, boundaries = [], []
-    for group in groups:
-        indices = [i for i, row in enumerate(data) if row["semantic_type"] == group]
-        centers.append((indices[0] + indices[-1]) / 2)
-        boundaries.append(indices[-1] + .5)
-    for ax, matrix, (name, _, labels) in zip(axes, matrices, panels, strict=True):
-        im = ax.imshow(matrix, aspect="auto", interpolation="nearest", cmap="RdBu_r",
-                       vmin=-limit, vmax=limit)
-        ax.set(title=name, xticks=range(3), xticklabels=labels)
-        ax.tick_params(axis="x", labelsize=10)
-        for boundary in boundaries[:-1]:
-            ax.axhline(boundary, color="white", linewidth=1)
-    axes[0].set_yticks(centers, [g.replace(" / ", " /\n") for g in groups], fontsize=10)
-    for ax in axes[1:]:
-        ax.tick_params(axis="y", left=False, labelleft=False)
-    fig.suptitle("Human and MoE responses at matched code regions", fontsize=15)
-    fig.subplots_adjust(left=.22, right=.87, bottom=.09, top=.93, wspace=.08)
-    cax = fig.add_axes((.90, .22, .018, .53))
-    fig.colorbar(im, cax=cax, label="Standardized aggregate response")
-    fig.text(.52, .025, "All 245 eligible regions; common unclipped scale. Color is not a significance test.",
-             ha="center", fontsize=9)
-    save(fig, output, "figure4_region_alignment")
+def region_alignment(output):
+    from reproduce_four_category_figure import verify, redraw
+    percentages, denominators = verify(ROOT / "results/rq1")
+    redraw(percentages, denominators, output / "region_retention")
 
 
 def theta_heatmap(output):
@@ -181,14 +148,17 @@ def program_triangle(output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=ROOT / "figures")
+    parser.add_argument("--figure", choices=["all", "4", "5", "6", "table2"], default="all")
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({
         "font.family": "DejaVu Sans", "font.size": 11, "axes.labelsize": 11,
         "axes.titlesize": 12, "pdf.fonttype": 42, "figure.facecolor": "white",
     })
-    for plot in [accuracy, region_heatmap, theta_heatmap, program_triangle]:
-        plot(args.output_dir)
+    plots = {"table2": accuracy, "4": region_alignment, "5": theta_heatmap, "6": program_triangle}
+    for key, plot in plots.items():
+        if args.figure in ("all", key):
+            plot(args.output_dir)
 
 
 if __name__ == "__main__":

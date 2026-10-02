@@ -1,0 +1,74 @@
+{
+  "min_tokens": 5,
+  "n_original_regions": 245,
+  "n_common_tokens": 1817,
+  "n_estimable_regions": 183,
+  "n_excluded_all_nonpositive": 14,
+  "n_excluded_three_or_more_nonpositive": 48,
+  "n_retained_regions": 135,
+  "glm_overlap_min": 1.0,
+  "glm_blocks": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+  ],
+  "normalization": {
+    "dwell_participant_z": {
+      "mean": -0.1366611393111214,
+      "sample_sd": 0.4223950512841359
+    },
+    "regression_participant_z": {
+      "mean": -0.15307481582448237,
+      "sample_sd": 0.41342013846269265
+    },
+    "revisit_participant_z": {
+      "mean": -0.15351029257940707,
+      "sample_sd": 0.466044641791233
+    },
+    "qwen_hidden": {
+      "mean": -0.03988697640355437,
+      "sample_sd": 0.39400786574645535
+    },
+    "qwen_moe_write": {
+      "mean": -0.02695690811808633,
+      "sample_sd": 0.402312404016686
+    },
+    "qwen_residual": {
+      "mean": 0.10465500506876921,
+      "sample_sd": 0.5705722784915483
+    },
+    "glm_hidden": {
+      "mean": 0.9714323937499267,
+      "sample_sd": 0.26218494161772765
+    },
+    "glm_moe_write": {
+      "mean": 0.2700096566351023,
+      "sample_sd": 0.05891457689539214
+    },
+    "glm_residual": {
+      "mean": 0.794592594044118,
+      "sample_sd": 0.06716000163587929
+    }
+  },
+  "source_sha256": {
+    "regions": "e72ccba4a52b662f14084aad5da83c047d64508f430cee90816cffaae5f06c1c",
+    "qwen_mapping": "bec5d2aae209c988e743d992d0391159c16214095a14d38280b0027d0677ba6a",
+    "glm_mapping": "bec5d2aae209c988e743d992d0391159c16214095a14d38280b0027d0677ba6a",
+    "gaze_tokens": "c76f9344757d090d44d68b6f1e84eb6af0aaff421985268dc829b6643ff61b7b",
+    "events": "60bda0982670502dc0bf8dbec79d351597582385f85c0e2d2a23b9e928064ead",
+    "glm_metrics": "5edfc63b52bc1dd6a81e86761f0847469f8d1080c673c62209fa8fa3ad120432",
+    "portable_regions": "6bf68b8a1e43c2d7faee7ff5e85d6315bd53744227679522e41c431dbd08c4cf"
+  },
+  "definition": "Within-region Spearman across common tokens; attention vs integration or measured theta vs integration",
+  "exclusion": "Require at least five common tokens by default and finite correlations in all four panels; then exclude rho<=0 in at least three of four panels (retain positive in at least two)",
+  "denominator": "Retained estimable regions within each semantic section; same region mask in all four panels",
+  "scope": "New descriptive within-region analysis; not the previous across-region signal-pair correlations",
+  "derived_export_sha256": "aab6735177770816ec914ccca4ac867fa964e2961a43b881db61ce6ad8c7f79b",
+  "analysis_script_sha256": "c49bbfe100a44ef4ee873799d8327c77d9ee909edc5b37705d74aca21a4a65a5"
+}

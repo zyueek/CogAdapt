@@ -1,0 +1,5 @@
+category,regions,previous_regions,added_regions,nonpositive_gaze_qwen,nonpositive_gaze_glm,nonpositive_theta_qwen,nonpositive_theta_glm
+Control flow,28,19,9,7,7,7,7
+Calls / returns,24,21,3,6,6,6,6
+Array expressions,12,11,1,2,3,3,3
+Scalar / other,17,17,0,3,4,4,4

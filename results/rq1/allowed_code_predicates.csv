@@ -1,0 +1,246 @@
+region_id,semantic_type,Branch tests,Return expressions,Function calls,Scalar / other,Array expressions,Loop headers
+R001,condition / branch,True,False,False,False,False,False
+R002,condition / branch,True,False,False,False,False,False
+R003,condition / branch,True,False,False,False,False,False
+R004,condition / branch,True,False,True,False,False,False
+R005,condition / branch,True,False,False,False,False,False
+R006,condition / branch,True,False,False,False,False,False
+R007,condition / branch,True,False,False,False,False,False
+R008,condition / branch,True,False,False,False,False,False
+R009,condition / branch,True,False,False,False,False,False
+R010,condition / branch,True,False,False,False,False,False
+R011,condition / branch,True,False,False,False,False,False
+R012,condition / branch,True,False,False,False,False,False
+R013,condition / branch,True,False,False,False,False,False
+R014,condition / branch,True,False,False,False,False,False
+R015,condition / branch,True,False,False,False,False,False
+R016,condition / branch,True,False,True,False,False,False
+R017,condition / branch,True,False,True,False,False,False
+R018,condition / branch,True,False,False,False,False,False
+R019,condition / branch,True,False,False,False,False,False
+R020,condition / branch,True,False,False,False,False,False
+R021,condition / branch,True,False,False,False,False,False
+R022,condition / branch,True,False,False,False,False,False
+R023,condition / branch,True,False,True,False,False,False
+R024,condition / branch,True,False,False,False,False,False
+R025,condition / branch,True,False,False,False,False,False
+R026,condition / branch,True,False,False,False,False,False
+R027,condition / branch,True,False,True,False,False,False
+R028,condition / branch,True,False,False,False,False,False
+R029,condition / branch,True,False,True,False,False,False
+R030,condition / branch,True,False,False,False,False,False
+R031,condition / branch,True,False,False,False,False,False
+R032,base case / return,True,False,False,False,False,False
+R033,base case / return,False,True,False,False,False,False
+R034,base case / return,True,False,False,False,False,False
+R035,base case / return,False,True,False,False,False,False
+R036,base case / return,False,True,False,False,False,False
+R037,base case / return,True,False,False,False,False,False
+R038,base case / return,False,True,False,False,False,False
+R039,base case / return,True,False,True,False,False,False
+R040,base case / return,False,True,True,False,False,False
+R041,base case / return,False,True,False,False,False,False
+R042,base case / return,False,True,False,False,False,False
+R043,base case / return,False,True,False,False,False,False
+R044,base case / return,True,False,True,False,False,False
+R045,base case / return,True,False,True,False,False,False
+R046,base case / return,False,True,False,False,False,False
+R047,base case / return,True,False,False,False,False,False
+R048,base case / return,False,True,True,False,False,False
+R049,base case / return,False,True,False,False,False,False
+R050,base case / return,True,False,False,False,False,False
+R051,base case / return,False,True,False,False,False,False
+R052,base case / return,True,False,False,False,False,False
+R053,base case / return,False,True,True,False,False,False
+R054,base case / return,True,False,False,False,False,False
+R055,base case / return,False,True,True,False,False,False
+R056,base case / return,False,True,True,False,False,False
+R057,base case / return,False,True,False,False,False,False
+R058,base case / return,False,True,True,False,False,False
+R059,base case / return,False,True,False,False,False,False
+R060,base case / return,True,False,False,False,False,False
+R061,base case / return,False,True,False,False,False,False
+R062,base case / return,False,True,False,False,False,False
+R063,base case / return,False,True,False,False,False,False
+R064,base case / return,False,True,True,False,False,False
+R065,base case / return,False,True,False,False,False,False
+R066,base case / return,False,True,False,False,False,False
+R067,base case / return,False,True,True,False,False,False
+R068,base case / return,True,False,False,False,False,False
+R069,base case / return,False,True,False,False,False,False
+R070,base case / return,False,True,False,False,False,False
+R071,base case / return,False,True,False,False,False,False
+R072,base case / return,False,True,True,False,False,False
+R073,base case / return,False,True,False,False,False,False
+R074,base case / return,True,False,False,False,False,False
+R075,base case / return,True,False,False,False,False,False
+R076,base case / return,False,True,False,False,False,False
+R077,recursion / function call,False,True,True,False,False,False
+R078,recursion / function call,False,True,True,False,False,False
+R079,recursion / function call,False,True,True,False,False,False
+R080,recursion / function call,False,True,True,False,False,False
+R081,recursion / function call,False,True,True,False,False,False
+R082,recursion / function call,False,False,True,False,False,False
+R083,recursion / function call,False,False,True,False,False,False
+R084,recursion / function call,False,False,True,False,False,False
+R085,recursion / function call,False,False,True,False,False,False
+R086,recursion / function call,False,False,True,False,False,False
+R087,recursion / function call,False,False,True,False,False,False
+R088,recursion / function call,False,False,True,False,False,False
+R089,recursion / function call,False,False,True,False,False,False
+R090,recursion / function call,False,False,True,False,False,False
+R091,recursion / function call,False,False,True,False,False,False
+R092,recursion / function call,False,True,True,False,False,False
+R093,recursion / function call,False,False,True,False,False,False
+R094,recursion / function call,False,False,True,False,False,False
+R095,recursion / function call,False,False,True,False,False,False
+R096,recursion / function call,False,False,True,False,False,False
+R097,recursion / function call,False,False,True,False,False,False
+R098,recursion / function call,False,False,True,False,False,False
+R099,recursion / function call,False,False,True,False,False,False
+R100,variable update,False,False,False,True,False,False
+R101,variable update,False,False,False,True,False,False
+R102,variable update,False,False,False,True,False,False
+R103,variable update,False,False,False,True,False,False
+R104,variable update,False,False,False,True,False,False
+R105,variable update,False,False,False,True,False,False
+R106,variable update,False,False,False,True,False,False
+R107,variable update,False,False,False,True,False,False
+R108,variable update,False,False,False,True,False,False
+R109,variable update,False,False,True,False,False,False
+R110,variable update,False,False,True,False,False,False
+R111,variable update,False,False,True,False,False,False
+R112,variable update,False,False,False,True,False,False
+R113,variable update,False,False,True,False,False,False
+R114,variable update,False,False,False,True,False,False
+R115,variable update,False,False,False,True,False,False
+R116,variable update,False,False,False,True,False,False
+R117,variable update,False,False,False,True,False,False
+R118,variable update,False,False,False,True,False,False
+R119,variable update,False,False,False,True,False,False
+R120,variable update,False,False,False,True,False,False
+R121,variable update,False,False,False,True,False,False
+R122,variable update,False,False,False,True,False,False
+R123,variable update,False,False,False,True,False,False
+R124,variable update,False,False,False,True,False,False
+R125,variable update,False,False,False,True,False,False
+R126,variable update,False,False,False,True,False,False
+R127,variable update,False,False,False,True,False,False
+R128,variable update,False,False,False,True,False,False
+R129,variable update,False,False,False,True,False,False
+R130,variable update,False,False,False,True,False,False
+R131,variable update,False,False,False,True,False,False
+R132,variable update,False,False,False,True,False,False
+R133,variable update,False,False,False,True,False,False
+R134,variable update,False,False,False,True,False,False
+R135,variable update,False,False,False,True,False,False
+R136,variable update,False,False,False,True,False,False
+R137,variable update,False,False,False,True,False,False
+R138,variable update,False,False,False,True,False,False
+R139,variable update,False,False,False,True,False,False
+R140,variable update,False,False,True,False,False,False
+R141,variable update,False,False,True,False,False,False
+R142,variable update,False,False,False,True,False,False
+R143,variable update,False,False,False,True,False,False
+R144,variable update,False,False,False,True,False,False
+R145,variable update,False,False,False,True,False,False
+R146,variable update,False,False,True,False,False,False
+R147,variable update,False,False,False,True,False,False
+R148,variable update,False,False,False,True,False,False
+R149,variable update,False,False,False,True,False,False
+R150,variable update,False,False,True,False,False,False
+R151,variable update,False,False,True,False,False,False
+R152,variable update,False,False,False,True,False,False
+R153,variable update,False,False,False,True,False,False
+R154,variable update,False,False,False,True,False,False
+R155,variable update,False,False,False,True,False,False
+R156,variable update,False,False,False,True,False,False
+R157,variable update,False,False,False,True,False,False
+R158,variable update,False,False,False,True,False,False
+R159,variable update,False,False,True,False,False,False
+R160,variable update,False,False,True,False,False,False
+R161,variable update,False,False,True,False,False,False
+R162,variable update,False,False,False,True,False,False
+R163,variable update,False,False,True,False,False,False
+R164,variable update,False,False,False,True,False,False
+R165,variable update,False,False,False,True,False,False
+R166,variable update,False,False,False,True,False,False
+R167,variable update,False,False,False,True,False,False
+R168,variable update,False,False,False,True,False,False
+R169,variable update,False,False,False,True,False,False
+R170,variable update,False,False,False,True,False,False
+R171,variable update,False,False,False,True,False,False
+R172,variable update,False,False,False,True,False,False
+R173,variable update,False,False,False,True,False,False
+R174,variable update,False,False,False,True,False,False
+R175,variable update,False,False,False,True,False,False
+R176,variable update,False,False,False,True,False,False
+R177,variable update,False,False,False,True,False,False
+R178,variable update,False,False,False,True,False,False
+R179,array/index access,False,False,False,False,True,False
+R180,array/index access,True,False,False,False,True,False
+R181,array/index access,True,False,False,False,True,False
+R182,array/index access,False,False,False,False,True,False
+R183,array/index access,False,False,False,False,True,False
+R184,array/index access,False,False,False,False,True,False
+R185,array/index access,True,False,False,False,True,False
+R186,array/index access,False,False,False,False,True,False
+R187,array/index access,False,False,False,False,True,False
+R188,array/index access,False,False,False,False,True,False
+R189,array/index access,True,False,False,False,True,False
+R190,array/index access,False,False,False,False,True,False
+R191,array/index access,False,False,False,False,True,False
+R192,array/index access,False,False,False,False,True,False
+R193,array/index access,False,False,False,False,True,False
+R194,array/index access,False,False,False,False,True,False
+R195,array/index access,False,False,False,False,True,False
+R196,array/index access,False,False,True,False,False,False
+R197,array/index access,False,False,False,False,True,False
+R198,array/index access,False,False,False,False,True,False
+R199,array/index access,False,False,False,False,True,False
+R200,array/index access,False,False,False,False,True,False
+R201,array/index access,False,False,False,False,True,False
+R202,array/index access,False,False,False,False,True,False
+R203,array/index access,False,False,False,False,True,False
+R204,array/index access,False,False,False,False,True,False
+R205,array/index access,False,False,False,False,True,False
+R206,array/index access,False,False,False,False,True,False
+R207,array/index access,False,False,False,False,True,False
+R208,array/index access,False,False,False,False,True,False
+R209,array/index access,False,False,False,False,True,False
+R210,array/index access,False,False,False,False,True,False
+R211,array/index access,True,False,False,False,True,False
+R212,array/index access,False,False,False,False,True,False
+R213,array/index access,True,False,False,False,True,False
+R214,array/index access,False,False,False,False,True,False
+R215,loop condition / boundary,False,False,False,False,False,True
+R216,loop condition / boundary,False,False,False,False,False,True
+R217,loop condition / boundary,False,False,True,False,False,True
+R218,loop condition / boundary,False,False,False,False,False,True
+R219,loop condition / boundary,False,False,True,False,False,True
+R220,loop condition / boundary,False,False,True,False,False,True
+R221,loop condition / boundary,False,False,True,False,False,True
+R222,loop condition / boundary,False,False,False,False,False,True
+R223,loop condition / boundary,False,False,False,False,False,True
+R224,loop condition / boundary,False,False,False,False,False,True
+R225,loop condition / boundary,False,False,False,False,False,True
+R226,loop condition / boundary,False,False,False,False,False,True
+R227,loop condition / boundary,False,False,False,False,False,True
+R228,loop condition / boundary,False,False,True,False,False,True
+R229,loop condition / boundary,False,False,True,False,False,True
+R230,loop condition / boundary,False,False,True,False,False,True
+R231,loop condition / boundary,False,False,False,False,False,True
+R232,loop condition / boundary,False,False,True,False,False,True
+R233,loop condition / boundary,False,False,True,False,False,True
+R234,loop condition / boundary,False,False,False,False,False,True
+R235,loop condition / boundary,False,False,False,False,False,True
+R236,loop condition / boundary,False,False,False,False,False,True
+R237,loop condition / boundary,False,False,False,False,False,True
+R238,loop condition / boundary,False,False,True,False,False,True
+R239,loop condition / boundary,False,False,False,False,False,True
+R240,loop condition / boundary,False,False,False,False,False,True
+R241,loop condition / boundary,False,False,False,False,False,True
+R242,loop condition / boundary,False,False,False,False,False,True
+R243,loop condition / boundary,False,False,False,False,False,True
+R244,loop condition / boundary,False,False,False,False,False,True
+R245,loop condition / boundary,False,False,False,False,False,True
