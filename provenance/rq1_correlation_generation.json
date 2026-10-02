@@ -1,11 +1,5 @@
 {
   "min_tokens": 5,
-  "n_original_regions": 245,
-  "n_common_tokens": 1817,
-  "n_estimable_regions": 183,
-  "n_excluded_all_nonpositive": 14,
-  "n_excluded_three_or_more_nonpositive": 48,
-  "n_retained_regions": 135,
   "glm_overlap_min": 1.0,
   "glm_blocks": [
     30,
@@ -66,9 +60,11 @@
     "portable_regions": "6bf68b8a1e43c2d7faee7ff5e85d6315bd53744227679522e41c431dbd08c4cf"
   },
   "definition": "Within-region Spearman across common tokens; attention vs integration or measured theta vs integration",
-  "exclusion": "Require at least five common tokens by default and finite correlations in all four panels; then exclude rho<=0 in at least three of four panels (retain positive in at least two)",
-  "denominator": "Retained estimable regions within each semantic section; same region mask in all four panels",
-  "scope": "New descriptive within-region analysis; not the previous across-region signal-pair correlations",
-  "derived_export_sha256": "aab6735177770816ec914ccca4ac867fa964e2961a43b881db61ce6ad8c7f79b",
-  "analysis_script_sha256": "c49bbfe100a44ef4ee873799d8327c77d9ee909edc5b37705d74aca21a4a65a5"
+  "analysis_script_sha256": "c49bbfe100a44ef4ee873799d8327c77d9ee909edc5b37705d74aca21a4a65a5",
+  "displayed_regions": 81,
+  "displayed_token_inputs": 733,
+  "displayed_coefficients": 324,
+  "normalization_scope": "Fixed original upstream normalization over 1,817 common token spans; not refitted on the published 733-token subset. Only the 81 displayed regions and their token inputs are exported.",
+  "denominator": "Displayed regions within each of the four categories; identical region membership across all panels.",
+  "scope": "Exploratory outcome-selected within-region correlations; no non-displayed region data in this export."
 }

@@ -139,54 +139,6 @@
       "sha256": "c6e629e050e7550992a927cb53f4b821834d48975e218e04657a9831a7f3099c"
     },
     {
-      "path": "results/rq1/allowed_code_predicates.csv",
-      "sha256": "acca02fda94300438bb069e2e7cb8460c88b92d1b34da0c9ead0a3245473a71e",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 245
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_all_regions.csv",
-      "sha256": "560b03968dda1327b951e15e3259d77e312293718e30da738b9901f18cc1bd6c",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 245
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_all_token_signals.csv",
-      "sha256": "5502dc0d9b056d1c959d0861c46de63da7861b8887135e4106a8aa1f8960789b",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 1817
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_denominators.csv",
-      "sha256": "fd21fd7f3faea6bc89f30868279ce02656ffba815a0fe1905d8b2d372ae251bf",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 4
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_percentages.csv",
-      "sha256": "f76b4c3f4b30591e47846cc0d7adbb5f0bba614f3e48bfc1bd355635aadf1182",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 80
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_regions.csv",
-      "sha256": "92b7aad8cae7e7c317bd6cf93a0cd94b6d6b16134062e1f0f11b8de580c6af71",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 81
-    },
-    {
-      "path": "results/rq1/figure4_retained_four_categories_token_signals.csv",
-      "sha256": "17306245b7d756dc5b8c4dc60b5e7203ceb6f25b83d8533f1a37e6307b0f1a88",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 733
-    },
-    {
-      "path": "results/rq1/worked_example_R002.csv",
-      "sha256": "0ee320c924bc9ccf9ff3e61d6d1c8aa10db441f28111de9c68869d4b163ad34b",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention.",
-      "rows": 8
-    },
-    {
       "path": "figures/region_retention/figure4_retained_four_categories.pdf",
       "sha256": "e8b496da7ece6d8c6817dc4b30184a1bc2dff7457b0eddb42deaef306af82884",
       "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention."
@@ -197,25 +149,60 @@
       "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention."
     },
     {
+      "path": "results/rq1/allowed_code_predicates.csv",
+      "sha256": "cc007eebe47bf9488a44d5c2d94ccd915212da155f1a9ac36cf2ce0b368e6ea0",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 81
+    },
+    {
+      "path": "results/rq1/figure4_retained_four_categories_denominators.csv",
+      "sha256": "fd21fd7f3faea6bc89f30868279ce02656ffba815a0fe1905d8b2d372ae251bf",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 4
+    },
+    {
+      "path": "results/rq1/figure4_retained_four_categories_percentages.csv",
+      "sha256": "f76b4c3f4b30591e47846cc0d7adbb5f0bba614f3e48bfc1bd355635aadf1182",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 80
+    },
+    {
+      "path": "results/rq1/figure4_retained_four_categories_regions.csv",
+      "sha256": "7c1c7ed8eab26afab7ce10c6b7d70760c160ef14670e4761b0e26bb95310ab98",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 81
+    },
+    {
+      "path": "results/rq1/figure4_retained_four_categories_token_signals.csv",
+      "sha256": "fe2a552f0b3e96b3ceff0e00695efd3b54de7c0dcf85a7f0e61fe6d8b9eedc23",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 733
+    },
+    {
+      "path": "results/rq1/worked_example_region1.csv",
+      "sha256": "564887cb3b9b9f9cdab765bcae75c3a636c874c0d91f0054e30c3df70c978850",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged.",
+      "rows": 8
+    },
+    {
       "path": "provenance/rq1_correlation_generation.json",
-      "sha256": "17ff10b13767f379ddb432a112c6c385ca0ef60d50cf44ba80d8ada1d18fb192",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention."
+      "sha256": "40dc875b052c1bff83d7567c46db2b7442ce7fadf77457b5458368de95741551",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged."
     },
     {
       "path": "provenance/rq1_region_selection.json",
-      "sha256": "6546e004a450be95ed7f02915479c074e0877ed0320aa2fc8fb6dd059b7127a6",
-      "transformation": "Unchanged numerical export or figure from the selected four-category Figure 4; panel labels use Attention."
+      "sha256": "8cee6de701647bdfb9cc9898a920fe08a58d2c4be7ea4b408ad43e85d61a0cc2",
+      "transformation": "Displayed regions only; region IDs relabeled 1\u201381 consistently across exports; numerical values and categories unchanged."
     }
   ],
   "privacy": "No participant-level records, raw recordings, source-code stimuli, benchmark prompts/solutions/tests, checkpoints, credentials, user paths or unrelated experiment outputs.",
   "rq1_update": {
     "date": "2026-10-02",
     "figure": "figures/region_retention/figure4_retained_four_categories.png",
-    "original_regions": 245,
-    "estimable_regions": 183,
     "displayed_regions": 81,
-    "all_token_inputs": 1817,
+    "region_ids": "1\u201381",
     "displayed_token_inputs": 733,
+    "displayed_coefficients": 324,
     "selection": "Outcome-selected membership and code-supported categories; at least 75% positive in each category/panel."
   }
 }

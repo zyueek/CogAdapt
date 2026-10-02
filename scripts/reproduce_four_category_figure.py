@@ -25,30 +25,38 @@ BANDS=[("ρ ≤ 0","#b8b5b0"),("0 < ρ < 0.30","#b6d8e8"),("0.30 ≤ ρ < 0.50",
 
 def verify(folder):
     read=lambda name:pd.read_csv(folder/name,float_precision="round_trip")
-    tokens=read(STEM+"_all_token_signals.csv")
-    regions=read(STEM+"_all_regions.csv")
+    tokens=read(STEM+"_token_signals.csv")
     shown=read(STEM+"_regions.csv")
     percentages=read(STEM+"_percentages.csv")
     denominators=read(STEM+"_denominators.csv")
-    assert tokens.token_id.is_unique and regions.region_id.is_unique and shown.region_id.is_unique
-    assert len(tokens)==1817 and len(regions)==245 and len(shown)==81
+    predicates=read("allowed_code_predicates.csv")
+    example=read("worked_example_region1.csv")
+    expected=set(range(1,82))
+    assert len(shown)==81 and shown.region_id.tolist()==list(range(1,82))
+    assert len(tokens)==733 and tokens.token_id.is_unique
+    assert set(tokens.region_id)==expected
+    assert len(predicates)==81 and set(predicates.region_id)==expected
+    assert len(percentages)==80 and len(denominators)==4
+    assert set(percentages.panel)==set(PAIRS)
+    assert not percentages.duplicated(["panel","section","band"]).any()
+    pd.testing.assert_frame_equal(example.reset_index(drop=True),
+                                  tokens[tokens.region_id.eq(1)].reset_index(drop=True))
     checked=0
-    for row in regions.itertuples():
+    for row in shown.itertuples():
         current=tokens[tokens.region_id.eq(row.region_id)]
-        assert len(current)==row.n_common_tokens
+        assert len(current)==row.n_common_tokens>=5
+        assert current.token_order_in_region.tolist()==list(range(1,len(current)+1))
+        assert current.token_id.tolist()==[f"{row.region_id}_T{i:03d}" for i in range(1,len(current)+1)]
+        assert current.alternative_section.eq(row.alternative_section).all()
+        assert current.program_id.eq(row.program_id).all()
         for signal in ["human_attention","eeg_theta","qwen_integration","glm_integration"]:
             np.testing.assert_array_equal(current[signal+"_rank"],current[signal].rank(method="average"))
-        if row.estimable:
-            assert len(current)>=5
-            for panel,(human,model) in PAIRS.items():
-                rho=spearmanr(current[human],current[model]).statistic
-                np.testing.assert_allclose(rho,getattr(row,"rho_"+panel),atol=1e-12)
-                checked+=1
-    assert set(shown.region_id)==set(regions.loc[regions.included,"region_id"])
-    assert tokens.included_in_figure.sum()==733
+        for panel,(human,model) in PAIRS.items():
+            rho=spearmanr(current[human],current[model]).statistic
+            np.testing.assert_allclose(rho,getattr(row,"rho_"+panel),atol=1e-12)
+            checked+=1
+    assert checked==324
     assert shown.was_in_previous75.sum()==68 and shown.added_region.sum()==13
-    np.testing.assert_array_equal(shown[["rho_"+p for p in PAIRS]],
-        regions.set_index("region_id").loc[shown.region_id,["rho_"+p for p in PAIRS]])
     for (panel,section),rows in percentages.groupby(["panel","section"],sort=False):
         current=shown[shown.alternative_section.eq(section)]
         values=current["rho_"+panel].to_numpy()
@@ -58,7 +66,7 @@ def verify(folder):
         np.testing.assert_allclose(rows.percentage,100*rows.region_count/len(current))
         assert np.isclose(rows.percentage.sum(),100) and np.mean(values>0)>=.75-1e-12
         assert denominators.loc[denominators.category.eq(section),"regions"].iloc[0]==len(current)
-    print(f"Verified {checked} correlations across 183 estimable regions, all 81 plotted rows, 733 displayed tokens and 80 bar segments.")
+    print(f"Verified {checked} correlations across 81 plotted regions (IDs 1–81), 733 displayed tokens and 80 bar segments.")
     return percentages,denominators
 
 

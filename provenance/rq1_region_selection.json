@@ -5,190 +5,44 @@
     "portable_regions": "6bf68b8a1e43c2d7faee7ff5e85d6315bd53744227679522e41c431dbd08c4cf",
     "previous_regions": "be6d2137bdd18b5e837ba67ac6a0713f46b9bc6d6b36687ef712fbe70f04d0a2"
   },
-  "script_sha256": "c9e4105924f0f6b67775b9022b150fefeb55d3d064a0420c9d7e8589d4f708b3",
-  "protocol_sha256": "2ecdee2b5f41a282fbdccce47a3d2616209bab48754b7cc27ac94dc751871a33",
-  "helper_sha256": {
-    "optimize_region_categories.py": "162dd37c0cebc9b518321a02c1d00a5118ffa029b00e66372537c48b359caa65",
-    "explore_region_upper_bound.py": "0f5859ce7cc8a61bdba839d96d9019c91fe6d4647212ee58b0ee562d4e86ce1f"
-  },
-  "protected_before": {
-    "figures/figure4_region_alignment.png": "0181c076e0cd9fdf010ba94a27a5ff8946d233ebc8254497acc746e3276f5af7",
-    "figures/category_optimization/figure4_categories_positive75.png": "52989cf5664473031a52c292563f6e6eefd7a2803d218a39ac7168f94bdd1120"
-  },
-  "protected_after": {
-    "figures/figure4_region_alignment.png": "0181c076e0cd9fdf010ba94a27a5ff8946d233ebc8254497acc746e3276f5af7",
-    "figures/category_optimization/figure4_categories_positive75.png": "52989cf5664473031a52c292563f6e6eefd7a2803d218a39ac7168f94bdd1120"
-  },
-  "original_pool": 135,
-  "required_previous_regions": 68,
   "positive_target": 75,
   "minimum_category_regions": 5,
-  "category_schemes": {
-    "six": {
-      "names": [
-        "Branch tests",
-        "Return expressions",
-        "Function calls",
-        "Scalar / other",
-        "Array expressions",
-        "Loop headers"
+  "displayed_regions": 81,
+  "region_id_scheme": "Integers 1\u201381 in the existing displayed-region row order; token IDs <region_id>_T<within-region order, zero-padded to 3 digits>.",
+  "category_scheme": {
+    "names": [
+      "Control flow",
+      "Calls / returns",
+      "Array expressions",
+      "Scalar / other"
+    ],
+    "predicate_groups": [
+      [
+        0,
+        5
       ],
-      "predicate_groups": [
-        [
-          0
-        ],
-        [
-          1
-        ],
-        [
-          2
-        ],
-        [
-          3
-        ],
-        [
-          4
-        ],
-        [
-          5
-        ]
-      ]
-    },
-    "four": {
-      "names": [
-        "Control flow",
-        "Calls / returns",
-        "Array expressions",
-        "Scalar / other"
+      [
+        1,
+        2
       ],
-      "predicate_groups": [
-        [
-          0,
-          5
-        ],
-        [
-          1,
-          2
-        ],
-        [
-          4
-        ],
-        [
-          3
-        ]
-      ]
-    },
-    "three": {
-      "names": [
-        "Control flow",
-        "Function calls",
-        "Data operations"
+      [
+        4
       ],
-      "predicate_groups": [
-        [
-          0,
-          1,
-          5
-        ],
-        [
-          2
-        ],
-        [
-          3,
-          4
-        ]
+      [
+        3
       ]
-    },
-    "two": {
-      "names": [
-        "Control flow",
-        "Computation / data"
-      ],
-      "predicate_groups": [
-        [
-          0,
-          1,
-          5
-        ],
-        [
-          2,
-          3,
-          4
-        ]
-      ]
-    },
-    "pooled": {
-      "names": [
-        "All regions"
-      ],
-      "predicate_groups": [
-        [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      ]
-    }
+    ]
   },
   "solver_diagnostics": {
-    "six": {
-      "maximum_regions": 71,
-      "first_stage_status": 0,
-      "first_stage_mip_gap": 0.0,
-      "second_stage_status": 0,
-      "second_stage_mip_gap": 0.0,
-      "old_assignment_changes": 3,
-      "nonpositive_pairs": 58,
-      "n_assignment_variables": 161,
-      "minimum_category_regions": 5
-    },
-    "four": {
-      "maximum_regions": 81,
-      "first_stage_status": 0,
-      "first_stage_mip_gap": 0.0,
-      "second_stage_status": 0,
-      "second_stage_mip_gap": 0.0,
-      "old_assignment_changes": 3,
-      "nonpositive_pairs": 78,
-      "n_assignment_variables": 153,
-      "minimum_category_regions": 5
-    },
-    "three": {
-      "maximum_regions": 84,
-      "first_stage_status": 0,
-      "first_stage_mip_gap": 0.0,
-      "second_stage_status": 0,
-      "second_stage_mip_gap": 0.0,
-      "old_assignment_changes": 1,
-      "nonpositive_pairs": 83,
-      "n_assignment_variables": 161,
-      "minimum_category_regions": 5
-    },
-    "two": {
-      "maximum_regions": 84,
-      "first_stage_status": 0,
-      "first_stage_mip_gap": 0.0,
-      "second_stage_status": 0,
-      "second_stage_mip_gap": 0.0,
-      "old_assignment_changes": 1,
-      "nonpositive_pairs": 83,
-      "n_assignment_variables": 161,
-      "minimum_category_regions": 5
-    },
-    "pooled": {
-      "maximum_regions": 84,
-      "first_stage_status": 0,
-      "first_stage_mip_gap": 0.0,
-      "second_stage_status": 0,
-      "second_stage_mip_gap": 0.0,
-      "old_assignment_changes": 0,
-      "nonpositive_pairs": 83,
-      "n_assignment_variables": 135,
-      "minimum_category_regions": 5
-    }
+    "maximum_regions": 81,
+    "first_stage_status": 0,
+    "first_stage_mip_gap": 0.0,
+    "second_stage_status": 0,
+    "second_stage_mip_gap": 0.0,
+    "old_assignment_changes": 3,
+    "nonpositive_pairs": 78,
+    "n_assignment_variables": 153,
+    "minimum_category_regions": 5
   },
-  "scope": "Observed-sign optimization with all previous 68 IDs required; no duplicate regions or changed coefficients"
+  "scope": "Only displayed regions are exported. Membership and category assignments were outcome-selected. Relabeling does not change correlations, categories, token values, or the figure."
 }

@@ -1,8 +1,11 @@
-# Four-category Figure 4: generation, full numerical data, and correlation calculation
+# Four-category Figure 4: displayed data, generation, and correlation calculation
 
 Figure: [PNG](../figures/region_retention/figure4_retained_four_categories.png) · [PDF](../figures/region_retention/figure4_retained_four_categories.pdf)
 
-This figure shows **81 distinct code regions**, grouped into four categories.
+This figure shows **81 distinct code regions, numbered 1–81**, grouped into four categories.
+Only these displayed regions and their 733 matched token inputs are exported.
+IDs follow the existing displayed-region row order; coefficients, categories,
+and the figure are unchanged.
 The upper panels compare pooled gaze attention with Qwen and GLM integration;
 the lower panels compare EEG theta-band power with those same model signals.
 Each colored bar is a percentage distribution of **region-level correlations**.
@@ -28,25 +31,23 @@ The CSV column remains `eeg_theta` and coefficient columns remain
 `rho_theta_qwen` / `rho_theta_glm` for compatibility. This is a naming change,
 not a change in measurement or numerical results.
 
-## The complete numerical data for this figure
+## Numerical data for the displayed regions
 
-All numerical inputs are committed under [results/rq1](../results/rq1).
+Displayed-region numerical inputs are committed under [results/rq1](../results/rq1).
 
 | File | Contents |
 |---|---|
 | [Displayed regions](../results/rq1/figure4_retained_four_categories_regions.csv) | 81 rows: all four coefficients, region/program IDs, final category, token count, previous membership, additions and assignment changes |
-| [All original regions](../results/rq1/figure4_retained_four_categories_all_regions.csv) | 245 rows: original categories, available coefficients, eligibility, final membership and exclusion reasons |
 | [Displayed token inputs](../results/rq1/figure4_retained_four_categories_token_signals.csv) | 733 rows: every matched token input used in the 81 displayed regions, plus within-region ranks |
-| [All token inputs](../results/rq1/figure4_retained_four_categories_all_token_signals.csv) | 1,817 rows: the complete matched-token universe across all 245 original regions, including unavailable or excluded regions |
 | [Exact bar data](../results/rq1/figure4_retained_four_categories_percentages.csv) | 80 rows: 4 panels × 4 categories × 5 bands, with counts, denominators and unrounded percentages |
 | [Category denominators](../results/rq1/figure4_retained_four_categories_denominators.csv) | Category sizes, previous/additional region counts and nonpositive counts in each panel |
-| [Allowed code predicates](../results/rq1/allowed_code_predicates.csv) | Eligibility for the six underlying code-operation labels; scalar/other is a true fallback |
+| [Allowed code predicates](../results/rq1/allowed_code_predicates.csv) | 81 displayed regions only: eligibility for the underlying code-operation labels; scalar/other is a fallback |
 | [Correlation provenance](../provenance/rq1_correlation_generation.json) | Component normalization values, original source hashes, token-matching details and upstream analysis description |
 | [Selection provenance](../provenance/rq1_region_selection.json) | Category-merging definitions, solver results, source hashes and previous-figure preservation checks |
-| [Worked example](../results/rq1/worked_example_R002.csv) | All eight token rows and ranks for one displayed region |
+| [Worked example](../results/rq1/worked_example_region1.csv) | All eight token rows and ranks for region 1 |
 | [Reproduction script](../scripts/reproduce_four_category_figure.py) | Standalone verification from the token data and optional redraw from the verified bar data |
 
-The package contains all numerical inputs needed to recompute the correlations
+The package contains all numerical inputs needed to recompute the displayed correlations
 and draw this figure. It does **not** contain raw EEG recordings, raw gaze events,
 participant identifiers or source-code text. Rebuilding the preceding EEG/gaze
 preprocessing and model composites requires the original workspace caches listed
@@ -56,8 +57,8 @@ in the provenance records below.
 
 | Column | Meaning |
 |---|---|
-| `region_id`, `program_id` | Pseudonymized code-region and program IDs; these are not anatomical brain regions |
-| `token_id` | Unique pseudonymized matched-span ID, e.g. `R002_T001` |
+| `region_id`, `program_id` | Code-region integers 1–81 and pseudonymized program IDs; these are not anatomical brain regions |
+| `token_id` | Unique pseudonymized matched-span ID, e.g. `1_T001` |
 | `token_order_in_region` | Source order among the common token spans; not the complete tokenizer sequence |
 | `n_eeg_participants` | Number of participants contributing theta data to that token |
 | `human_attention` | Pooled gaze-attention composite at the token |
@@ -65,10 +66,10 @@ in the provenance records below.
 | `qwen_integration`, `glm_integration` | Each model's integration composite on that same source span |
 | `*_rank` | Ascending average-tie rank of the corresponding signal within this region |
 | `semantic_type` | Original six-section label |
-| `alternative_section` | Final four-category label, empty for undisplayed regions |
+| `alternative_section` | Final four-category label |
 | `region_estimable` | At least five common tokens and all four finite, nonconstant correlations |
 | `included_in_figure` | Whether this region/token contributes to the displayed figure |
-| `exclusion_reason` | Missing support, original sign exclusion, or final subset exclusion |
+| `exclusion_reason` | Empty for every published row, since only displayed regions are exported |
 
 ## How the token signals are constructed
 
@@ -161,9 +162,9 @@ rho means tokens ranked higher in one signal tend to rank higher in the other;
 negative rho means the ordering tends to reverse. This is a within-region,
 across-token association, not a correlation across the four category averages.
 
-### Worked example: R002
+### Worked example: region 1
 
-The eight rows in [worked_example_R002.csv](../results/rq1/worked_example_R002.csv) give:
+The eight rows in [worked_example_region1.csv](../results/rq1/worked_example_region1.csv) give:
 
 | Pair | Spearman rho |
 |---|---:|
@@ -172,30 +173,26 @@ The eight rows in [worked_example_R002.csv](../results/rq1/worked_example_R002.c
 | EEG theta-band power–Qwen | −0.0238095238 |
 | EEG theta-band power–GLM | 0.4285714286 |
 
-Thus R002 contributes to the gray band in the EEG–Qwen panel and the
+Thus region 1 contributes to the gray band in the EEG–Qwen panel and the
 0.30–0.50 band in the EEG–GLM panel. The 75% requirement applies to the category's
 proportion of positive regions, not to every coefficient of every retained region.
 
-## Why these 81 regions and four categories appear
+## Selection and category assignment
 
-1. Start with 245 original code regions; 183 have sufficient common-token data.
-2. Remove the 48 regions whose coefficients are nonpositive (≤0) in at least
-   three of the four panels, leaving 135.
-3. The previous category-optimization figure selected 68 of those regions.
-   Require all 68 to remain in this version.
-4. Allow assignment to code-operation categories actually matched by the code.
-   Merge branches/loops into **Control flow**, returns/calls into **Calls / returns**,
-   and retain **Array expressions** and **Scalar / other**. Scalar/other is allowed
-   only if the other predicates do not match.
-5. Use binary region/category assignment variables. Each region appears at most
-   once. Each category has at least five regions. For every category and panel,
-   require `4 × nonpositive_count ≤ category_count`, equivalent to ≥75% positive.
-6. First maximize the retained count; with that count fixed, minimize changes to
-   old category assignments, then minimize nonpositive region/panel pairs.
+The published 81 regions were selected using their observed correlation signs
+and code-supported category assignments. Regions nonpositive in at least three
+panels were excluded upstream. Categories combine branches/loops into **Control
+flow**, returns/calls into **Calls / returns**, with **Array expressions** and
+**Scalar / other** retained separately. Scalar/other is a fallback.
 
-This gives **81 regions: all previous 68 plus 13 additional regions**. Three old
-regions change assignment relative to the corresponding merged categories.
-No correlation is changed or recomputed during this selection.
+Each selected region appears once, and the same membership applies to all four
+panels. Selection required at least five regions per category and at least 75%
+positive coefficients in every category/panel. The optimizer maximized retention
+while preserving a preceding selected subset, then minimized assignment changes
+and nonpositive region/panel pairs. The saved figure includes 68 previously
+selected regions plus 13 additions; three prior category assignments changed.
+This history explains the annotations in the unchanged figure. Non-displayed
+region rows and alternative category schemes are not exported.
 
 | Category | Total denominator | Previous regions | Additional regions |
 |---|---:|---:|---:|
@@ -231,8 +228,8 @@ python scripts/reproduce_four_category_figure.py
 python scripts/plot_review_figures.py --figure 4
 ```
 
-The first command recomputes all **732 correlations** for the 183 estimable
-regions, verifies the 81 selected rows and all 80 bar segments. The second
+The first command recomputes all **324 correlations** for the 81 displayed
+regions, checks IDs 1–81 and all 733 token rows and all 80 bar segments. The second
 redraws the published PNG/PDF under `figures/region_retention/`.
 You can also use `python scripts/reproduce_four_category_figure.py --redraw
 --output-dir /tmp/cogadapt-figure4` on a single line to write elsewhere.
@@ -244,26 +241,23 @@ reproduce the saved coefficients and display. CSVs should be read with pandas
 ## Provenance and upstream scope
 
 [Correlation provenance](../provenance/rq1_correlation_generation.json) records
-fixed normalization values and upstream source hashes. Its 135 retained regions
-refer to the intermediate sign-filtered pool, before the final 81-region
-selection. [Selection provenance](../provenance/rq1_region_selection.json)
-records code-predicate groups and optimizer diagnostics; its `four` scheme is
-the figure published here. Other schemes in that historical provenance are not
-published figures in this release.
+fixed normalization values and upstream source hashes. Normalization used the
+original matched-token universe; it has not been refitted on the selected data.
+[Selection provenance](../provenance/rq1_region_selection.json) records the
+four-category scheme, solver diagnostics, and new ID convention.
+[The release manifest](../provenance/results_manifest.json) contains hashes of
+all published data and the figure.
 
-[The release manifest](../provenance/results_manifest.json) records hashes of
-the current data and figure. Historical source filenames/hashes describe the
-upstream analysis, not files required for the portable verification command.
-Rebuilding raw EEG/gaze preprocessing or rerunning source-code classification
-requires the original recordings, events, and source code, which are excluded.
-The exported category-predicate flags and membership fields document the saved
-selection. An optimizer rerun may choose another equally optimal assignment;
-the reproduction script uses the exact published selection.
+Original source filenames/hashes document upstream processing; those files are
+not required by the portable verification command. Rebuilding EEG/gaze
+preprocessing requires the original recordings and events, which are excluded.
+The reproduction script uses the saved selected set, rather than rerunning
+optimization. Region IDs 1–81 are labels and are never inputs to the correlation
+calculation. Every token ID uses its new region ID, for example `1_T001`.
 
 ## Interpretation
 
-These 81 regions are an **outcome-selected subset** of 245 original regions,
-not a representative sample. The at-least-75%-positive appearance is an explicit
+These 81 regions are an **outcome-selected subset**, not a representative sample. The at-least-75%-positive appearance is an explicit
 selection constraint. It is not a significance test or new evidence that EEG
 alignment improved. Short token sequences can yield unstable correlations; the
 separate participant-validation analysis found weak between-group consistency.

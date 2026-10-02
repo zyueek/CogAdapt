@@ -98,7 +98,7 @@ def verify_accuracy():
 def verify_alignment():
     from reproduce_four_category_figure import verify
     verify(ROOT / "results/rq1")
-    regions = csv_rows("results/rq1/figure4_retained_four_categories_all_regions.csv")
+    regions = csv_rows("results/rq1/figure4_retained_four_categories_regions.csv")
     programs = csv_rows("results/rq2/program_values.csv")
     assert len(programs) == 32 and len({r["program_id"] for r in programs}) == 32
     for row in csv_rows("results/rq2/program_correlations.csv"):

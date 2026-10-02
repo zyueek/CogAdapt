@@ -119,8 +119,8 @@ treated as a cross-architecture common numerical scale.
 ## Statistical scope
 
 - RQ1 uses within-region Spearman correlations across matched tokens. Its
-  81-region figure is selected from 183 estimable regions (245 original regions)
-  using observed signs and code-supported category assignments. The requirement
+  81-region figure is selected using observed signs and code-supported category
+  assignments; only these displayed regions, numbered 1–81, are exported. The requirement
   of at least 75% positive per bar is a selection constraint, not significance.
 - Regions share programs and participants. Pooled token inputs allow numerical
   verification, but do not provide independent participant-level replication.

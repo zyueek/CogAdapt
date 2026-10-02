@@ -7,7 +7,7 @@ included or required to inspect this release.
 | Paper location | Included object | Reproducible from this subset |
 |---|---|---|
 | Sections 4.3–4.5 | Selector, weight, loss, and masking excerpts | Cached-mask selection; numerical weight/loss behavior; masking unit tests |
-| RQ1, Figure 4 | Selected 81-region PNG/PDF, 245-region audit, 1,817 pooled token inputs, memberships and bar counts | Recompute all 732 coefficients and redraw the four-category percentage bars; see [instructions](RQ1_REGION_ALIGNMENT.md) |
+| RQ1, Figure 4 | Selected 81-region PNG/PDF, regions numbered 1–81, 733 pooled token inputs and bar counts | Recompute all 324 coefficients and redraw the four-category percentage bars; see [instructions](RQ1_REGION_ALIGNMENT.md) |
 | Figure 5 | All 5,700 model/family/block/bin cells, including 36 unavailable GLM cells | Redraw the full maps; upstream metric/theta extraction is excluded |
 | Figure 6 | 32 pseudonymized program aggregates | Recompute the three rank correlations and redraw scatter panels |
 | Introduction's program difficulty–theta result | Saved Qwen/GLM out-of-fold difficulty aggregates | Recompute 0.717 and 0.511 correlations; not refit the predictors |
@@ -28,7 +28,7 @@ included or required to inspect this release.
 - The manuscript PDF, original schematic illustrations, and workspace Git history.
 
 Program IDs P01–P32 derive from source condition indices, not participant
-identities. Region IDs R001–R245 preserve the fixed Figure 4 ordering. Benchmark
+identities. Region IDs 1–81 enumerate only the displayed Figure 4 regions in their existing row order. Benchmark
 task IDs preserve pairing across the included conditions but do not distribute
 task names or content.
 
