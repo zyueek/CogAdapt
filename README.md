@@ -3,10 +3,9 @@
 Selected review artifact for **CogAdapt: Cognitive-Informed Sparse Adaptation of
 LLM Models for Code Generation**.
 
-CogAdapt uses offline human code-reading evidence to guide task/token loss
-weights and task-dependent adaptation of MoE models. Downstream fine-tuning uses
-ordinary coding instructions and reference solutions. **No EEG or gaze input is
-required at inference.**
+CogAdapt studies human code-reading signals and MoE models for code generation.
+Downstream fine-tuning uses ordinary coding instructions and reference solutions.
+**No EEG or gaze input is required at inference.**
 
 This repository intentionally contains only important implementation excerpts,
 aggregate paper results, and lightweight inspection tools. **It is not an
@@ -18,8 +17,6 @@ workspace history.
 
 | Paper component | Review code / result |
 |---|---|
-| Task-dependent block ranking and selection, Section 4.3 | [Qwen selector](cogadapt/selection_qwen.py), [GLM selector](cogadapt/selection_glm.py), [six real cached examples](results/rq3/selection_examples.json) |
-| Task/token emphasis, Section 4.4 | [Weighting routines](cogadapt/weighting.py) |
 | Weighted causal loss, gradient eligibility, inference activation | [Selected PyTorch routines](cogadapt/torch_helpers.py) |
 | Spearman alignment and length controls | [Alignment routines](cogadapt/alignment.py) |
 | CKA baseline formula | [linear_cka](cogadapt/torch_helpers.py) |
@@ -33,34 +30,8 @@ workspace history.
 
 Most core routines are verbatim extracts of the implementation used in the
 experiments. Their source filenames, symbols, line numbers, and hashes are
-recorded. Standalone task/token-weight wrappers, verification, and plotting
-helpers were added for this limited review release; they are not represented as
-the original training runner.
-
-## Method at a glance
-
-~~~text
-OFFLINE HUMAN STUDY
-Shared Java code + EEG/gaze -> difficulty, token-category, and depth priors
-
-DOWNSTREAM TRAINING
-Coding prompt + reference -> frozen-model features -> cached block mask
-Reference + human-informed weights -> coding loss -> selected parameter gradients
-
-DEPLOYMENT
-New coding prompt -> prompt-only block mask -> enabled learned updates -> solution
-~~~
-
-Blocks, experts, and adapters are different objects. Qwen has 48 transformer
-blocks and GLM has 47; each routed block contains multiple experts. Selected
-blocks contain attention LoRA adapters and trainable router gate weights.
-Pretrained expert feed-forward weights remain frozen.
-
-During training, masks restrict parameter-gradient eligibility; all installed
-adaptations still participate in the forward pass. An optimizer step can update
-the union of masks across its eight accumulated microsteps. At inference,
-nonselected LoRA contributions are disabled and nonselected routers restored to
-base. **The full transformer backbone still executes.**
+recorded. Verification and plotting helpers were added for this limited review
+release; they are not represented as the original training runner.
 
 See [implementation and interpretation notes](docs/IMPLEMENTATION_NOTES.md) for
 the distinctions between the manuscript's conceptual descriptions and the
@@ -90,9 +61,8 @@ Only these paper cohorts are included. This snapshot is not a complete archive
 of every experiment or random mask explored during development.
 
 Regular FT is the matched **all-block attention-LoRA/router** control, not
-full-parameter tuning of the entire model. Random-K6 and CKA-K6 retain the
-human-informed loss weights. Dynamic versus Regular FT therefore evaluates the
-combined selection-and-weighting recipe, not EEG's isolated causal contribution.
+full-parameter tuning of the entire model. The reported comparison evaluates
+the complete CogAdapt method and does not isolate EEG's causal contribution.
 
 The paired task-bootstrap intervals exclude zero for the LiveCodeBench gains
 (Qwen +10.86 and GLM +6.29 percentage points), but include zero for BigCodeBench.
@@ -128,8 +98,8 @@ python scripts/plot_review_figures.py
 ~~~
 
 The verifier recomputes table means/sample SDs, checks the binary outcomes,
-recalculates aggregate correlations, reproduces the six cached block masks, and
-validates exported-file and source-excerpt hashes. It does not train or evaluate
+recalculates aggregate correlations, and validates exported-file and
+source-excerpt hashes. It does not train or evaluate
 an LLM. Tests use tiny synthetic arrays/tensors solely as unit-test fixtures.
 
 The plotting script draws the Table 2 accuracy summary, Figure 4 percentage

@@ -6,7 +6,7 @@ included or required to inspect this release.
 
 | Paper location | Included object | Reproducible from this subset |
 |---|---|---|
-| Sections 4.3–4.5 | Selector, weight, loss, and masking excerpts | Cached-mask selection; numerical weight/loss behavior; masking unit tests |
+| Section 4.5 | Loss and masking excerpts | Numerical loss behavior and masking unit tests |
 | RQ1, Figure 4 | Selected 81-region PNG/PDF, regions numbered 1–81, 733 pooled token inputs and bar counts | Recompute all 324 coefficients and redraw the four-category percentage bars; see [instructions](RQ1_REGION_ALIGNMENT.md) |
 | Figure 5 | All 5,700 model/family/block/bin cells, including 36 unavailable GLM cells | Redraw the full maps; upstream metric/theta extraction is excluded |
 | Figure 6 | 32 pseudonymized program aggregates | Recompute the three rank correlations and redraw scatter panels |
